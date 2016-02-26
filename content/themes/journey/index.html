@@ -1,0 +1,10 @@
+{% extends "default.html" %}
+
+{% block content %}
+  <main class="content">
+    {% posts pageNum "{'Columns': ['title', 'slug', 'html', 'author_id', 'published_at'], 'OrderByAsc': false, 'Include': 'user'}" %}
+      {% include "partials/loop.html" %}
+      {% include "partials/pagination.html" %}
+    {% endposts %}
+  </main>
+{% endblock %}

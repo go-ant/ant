@@ -1,0 +1,38 @@
+<div class="page-header">
+  <h2>
+    <md-button class="md-icon-button" hide-gt-md aria-label="Toggle Menu" ng-click="vm.openMenu()">
+      <md-icon>menu</md-icon>
+    </md-button>
+    {{vm.breadcrumb | translate}}
+  </h2>
+</div>
+<div class="panel panel-padding">
+  <md-input-container class="md-block">
+    <label>{{'role_name' | translate}}</label>
+    <input type="text" maxlength="50" md-maxlength="50" ng-model="vm.models.role.name">
+  </md-input-container>
+  <md-input-container class="md-block">
+    <label translate>{{ 'role_description' | translate}}</label>
+    <input type="text" maxlength="150" md-maxlength="150" ng-model="vm.models.role.description">
+  </md-input-container>
+
+  <h3 class="sub-header">{{'core_permission' | translate}}</h3>
+  <section layout="row" layout-wrap>
+    <div flex="25" flex-sm="50" flex-md="50" ng-repeat="permission in vm.models.permissions.core">
+      <md-checkbox ng-checked="vm.existsPermission(permission)" ng-click="vm.togglePermission(permission.id)">{{::permission.name}}</md-checkbox>
+    </div>
+  </section>
+  <h3 class="sub-header" ng-if="vm.models.permissions.additional.length > 0">{{'additional_permission' | translate}}</h3>
+  <section layout="row" layout-wrap ng-if="vm.models.permissions.additional.length > 0">
+    <div flex="25" ng-repeat="permission in vm.models.permissions.additional">
+      <md-checkbox ng-checked="vm.existsPermission(permission)" ng-click="vm.togglePermission(permission.id)">{{::permission.name}}</md-checkbox>
+    </div>
+  </section>
+  <div class="form-action" layout="row" ng-if="vm.allowSave()" style="padding-top: 24px;">
+    <md-button class="md-raised md-primary no-margin" flex-sm flex-md ng-class="{'md-processing': vm.isSaving}" ng-click="vm.save()">
+      <span ng-if="vm.models.role.id>0">{{'save' | translate}}</span>
+      <span ng-if="vm.models.role.id==0">{{'create' | translate}}</span>
+      <div class="processer"><i class="spinner-wrap"><i class="circle"></i></i></div>
+    </md-button>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+@import "variable";
+
+.ga-login {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url(images/bg.png);
+  background-size: cover;
+
+  md-icon {
+    color: #aaa;
+  }
+
+  &>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 340px;
+    background: #fff;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+
+    h2 {
+      height: 60px;
+      line-height: 60px;
+      margin: 0;
+      padding-left: 20px;
+      background-color: $clrPrimary;
+      color: #fff;
+      font-weight: 200;
+    }
+    section {
+      padding: 20px 25px 20px 20px;
+    }
+    .action {
+      margin: 16px 0 8px;
+    }
+    .md-button {
+      width: 100%;
+    }
+  }
+}

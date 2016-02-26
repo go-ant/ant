@@ -1,0 +1,470 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "create_owner"
+msgstr ""
+
+msgid "blog_title"
+msgstr "タイトル"
+
+msgid "no_data_found"
+msgstr "はありません"
+
+msgid "create"
+msgstr "作成"
+
+msgid "save"
+msgstr "保存する"
+
+msgid "edit"
+msgstr "編集"
+
+msgid "delete"
+msgstr "削除"
+
+msgid "cancel"
+msgstr "取り消す"
+
+msgid "preview"
+msgstr "プレビュー"
+
+msgid "slug"
+msgstr "スラッグ"
+
+msgid "label"
+msgstr ""
+
+msgid "url"
+msgstr "URL"
+
+msgid "last_seen"
+msgstr "最終ログイン"
+
+msgid "password"
+msgstr "パスワード"
+
+msgid "forgot_password"
+msgstr "パスワードをお忘れですか"
+
+msgid "sign_in"
+msgstr "ログイン"
+
+msgid "sign_out"
+msgstr "ログアウト"
+
+msgid "add_img"
+msgstr "画像添付"
+
+msgid "img_url"
+msgstr "画像のアドレス"
+
+msgid "draft"
+msgstr "下書き"
+
+msgid "published"
+msgstr "公開"
+
+msgid "save_draft"
+msgstr "下書きを保存する"
+
+msgid "publish_now"
+msgstr "公開にする"
+
+msgid "update_post"
+msgstr "更新する"
+
+msgid "unpublish"
+msgstr "未公開にする"
+
+msgid "publish_date"
+msgstr "公開日付"
+
+msgid "extra_content_for_seo"
+msgstr ""
+
+msgid "meta_title"
+msgstr ""
+
+msgid "meta_description"
+msgstr ""
+
+msgid "post_manage"
+msgstr "投稿"
+
+msgid "post_list"
+msgstr "投稿一覧"
+
+msgid "post_add"
+msgstr "新規追加"
+
+msgid "post_edit"
+msgstr "編集"
+
+msgid "post_delete"
+msgstr "削除"
+
+msgid "post_title"
+msgstr "タイトル"
+
+msgid "post_setting"
+msgstr ""
+
+msgid "add_post_cover"
+msgstr "画像添付"
+
+msgid "post_url"
+msgstr "アドレス"
+
+msgid "post_tag"
+msgstr "タグ"
+
+msgid "post_status"
+msgstr "ステータス"
+
+msgid "turn_into_page"
+msgstr "固定ページにする"
+
+msgid "feature_post"
+msgstr ""
+
+msgid "user"
+msgstr "ユーザー"
+
+msgid "user_manage"
+msgstr "ユーザー"
+
+msgid "user_list"
+msgstr "ユーザー一覧"
+
+msgid "user_add"
+msgstr "新規ユーザーを追加"
+
+msgid "user_name"
+msgstr "ユーザー名"
+
+msgid "user_profile"
+msgstr "プロフィール"
+
+msgid "email"
+msgstr "メールアドレス"
+
+msgid "location"
+msgstr "現在地"
+
+msgid "website"
+msgstr "ウェブサイト"
+
+msgid "bio"
+msgstr "自己紹介"
+
+msgid "password_old"
+msgstr "現在のパスワード"
+
+msgid "password_new"
+msgstr "新しいパスワード"
+
+msgid "password_verify"
+msgstr "新しいパスワードの確認"
+
+msgid "password_change"
+msgstr "パスワードを変更"
+
+msgid "role"
+msgstr "権限グループ"
+
+msgid "role_manage"
+msgstr "権限"
+
+msgid "role_list"
+msgstr "権限一覧"
+
+msgid "role_add"
+msgstr "新規権限追加"
+
+msgid "role_edit"
+msgstr "編集"
+
+msgid "role_name"
+msgstr "権限名前"
+
+msgid "role_description"
+msgstr "権限説明"
+
+msgid "core_permission"
+msgstr ""
+
+msgid "additional_permission"
+msgstr ""
+
+msgid "setting_general"
+msgstr ""
+
+msgid "setting_navigation"
+msgstr ""
+
+msgid "site_title"
+msgstr "サイトのタイトル"
+
+msgid "site_description"
+msgstr ""
+
+msgid "site_logo"
+msgstr "サイトのLOGO"
+
+msgid "site_cover"
+msgstr ""
+
+msgid "post_per_page"
+msgstr ""
+
+msgid "theme"
+msgstr "テーマ"
+
+msgid "interface_language"
+msgstr ""
+
+msgid "code_injection"
+msgstr ""
+
+msgid "code_injection_header"
+msgstr ""
+
+msgid "code_injection_footer"
+msgstr ""
+
+msgid "nav.dashboard"
+msgstr "ダッシュボード"
+
+msgid "nav.post_manage"
+msgstr "投稿"
+
+msgid "nav.post_list"
+msgstr "投稿一覧"
+
+msgid "nav.post_add"
+msgstr "新規追加"
+
+msgid "nav.post_category"
+msgstr "カテゴリー"
+
+msgid "nav.post_tag"
+msgstr "タグ"
+
+msgid "nav.appearance"
+msgstr "外観"
+
+msgid "nav.theme"
+msgstr "テーマ"
+
+msgid "nav.user_manage"
+msgstr "ユーザー"
+
+msgid "nav.user_list"
+msgstr "ユーザー一覧"
+
+msgid "nav.user_add"
+msgstr "新規ユーザー追加"
+
+msgid "nav.role_manage"
+msgstr "権限"
+
+msgid "nav.role_list"
+msgstr "権限一覧"
+
+msgid "nav.setting"
+msgstr "設定"
+
+msgid "nav.general"
+msgstr "一般"
+
+msgid "nav.navigation"
+msgstr ""
+
+msgid "nav.media"
+msgstr "メディア"
+
+msgid "nav.view_profile"
+msgstr "自分のプロフィール"
+
+msgid "nav.account_setting"
+msgstr "アカウント設定"
+
+msgid "hint.code_inject_into_head"
+msgstr ""
+
+msgid "hint.code_inject_into_foot"
+msgstr ""
+
+msgid "dlg.markdown_help"
+msgstr ""
+
+msgid "dlg.markdown_result"
+msgstr ""
+
+msgid "dlg.markdown_syntax_link"
+msgstr ""
+
+msgid "dlg.would_you_like_to_delete_post"
+msgstr ""
+
+msgid "dlg.would_you_like_to_delete_role"
+msgstr "権限`{name}` を削除しますか?"
+
+#. Fill Out The Form To Sign In
+msgid "msg.fill_out_the_form_to_sign_in"
+msgstr ""
+
+#. Created
+msgid "msg.created"
+msgstr "作成しました"
+
+#. Saved
+msgid "msg.saved"
+msgstr "保存しました"
+
+#. Deleted
+msgid "msg.deleted"
+msgstr "削除しました"
+
+#. Need To Sign In
+msgid "msg.need_to_sign_in"
+msgstr "ログインしてください"
+
+#. No Permission To Perform Operation
+msgid "msg.no_permission"
+msgstr "編集する権限がありません"
+
+#. Save Failed
+msgid "msg.save_fail"
+msgstr ""
+
+#. Load Failed
+msgid "msg.load_fail"
+msgstr ""
+
+#. Role Name Can Not Be Empty
+msgid "msg.role_name_not_be_empty"
+msgstr ""
+
+#. Role Name Cannot Be Longer Than 50 Characters
+msgid "msg.role_name_too_long"
+msgstr ""
+
+#. Does Not Support Numeric Role Name
+msgid "msg.not_support_numeric_role"
+msgstr ""
+
+#. Role Description Cannot Be Longer Than 150 Characters
+msgid "msg.role_description_too_long"
+msgstr ""
+
+#. Role Can Not Be Empty
+msgid "msg.role_not_be_empty"
+msgstr ""
+
+#. Role Already Exist
+msgid "msg.role_exist"
+msgstr ""
+
+#. Role Not Found
+msgid "msg.role_not_found"
+msgstr ""
+
+#. Role Have Users Cannot Be Deleted
+msgid "msg.role_have_users_not_be_deleted"
+msgstr ""
+
+#. Capability Can Not Be Empty
+msgid "msg.perm_not_be_empty"
+msgstr ""
+
+#. Permission Already Exist
+msgid "msg.perm_exist"
+msgstr ""
+
+#. User Name Can Not Be Empty
+msgid "msg.user_name_not_be_empty"
+msgstr ""
+
+#. User Name Cannot Be Longer Than 50 Characters
+msgid "msg.user_name_too_long"
+msgstr ""
+
+#. Does Not Support Numeric User Name
+msgid "msg.not_support_numeric_user"
+msgstr ""
+
+#. User Password Can Not Be Empty
+msgid "msg.user_password_not_be_empty"
+msgstr ""
+
+#. User Password Cannot Be Longer Than 20 Characters
+msgid "msg.user_password_too_long"
+msgstr ""
+
+#. User Already Exist
+msgid "msg.user_exist"
+msgstr ""
+
+#. User Not Found
+msgid "msg.user_not_found"
+msgstr ""
+
+#. Password Is Incorrect
+msgid "msg.password_incorrect"
+msgstr ""
+
+#. Passwords Do Not Match
+msgid "msg.passwords_not_match"
+msgstr ""
+
+#. Password Is Required For This Operation
+msgid "msg.password_required"
+msgstr ""
+
+#. Password Must Be At Least 8 Characters Long
+msgid "msg.password_at_least_8_char"
+msgstr ""
+
+#. Title Cannot Be Longer Than 150 Characters
+msgid "msg.post_title_too_long"
+msgstr ""
+
+#. Post Url Cannot Be Longer Than 200 Characters
+msgid "msg.post_slug_too_long"
+msgstr ""
+
+#. Meta Title Cannot Be Longer Than 150 Characters
+msgid "msg.post_meta_title_too_long"
+msgstr ""
+
+#. Meta Description Be Longer Than 200 Characters
+msgid "msg.post_meta_description_too_long"
+msgstr ""
+
+#. Post Url Already Exist
+msgid "msg.post_slug_exist"
+msgstr ""
+
+#. Post Not Found
+msgid "msg.post_not_found"
+msgstr ""
+
+#. File Type Is Not Supported
+msgid "msg.file_not_supported"
+msgstr ""
+
+#. The File Is Too Large
+msgid "msg.file_too_large"
+msgstr ""

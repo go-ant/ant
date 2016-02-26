@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h2>
+    <md-button class="md-icon-button" hide-gt-md aria-label="Toggle Menu" ng-click="vm.openMenu()">
+      <md-icon>menu</md-icon>
+    </md-button>
+    {{vm.breadcrumb | translate}}
+  </h2>
+</div>
+<div class="panel panel-padding">
+  <div layout="column">
+    <md-input-container>
+      <label>{{'role' | translate}}</label>
+      <md-select md-on-open="vm.getRoles()" ng-model="vm.models.user.roles[0].id">
+        <md-option value="{{role.id}}" ng-repeat="role in vm.roles">{{role.name}}</md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+  <md-input-container class="md-block">
+    <label>{{'user_name' | translate}}</label>
+    <input type="text" maxlength="50" md-maxlength="50" ng-model="vm.models.user.name">
+  </md-input-container>
+  <md-input-container class="md-block">
+    <label>{{'password' | translate}}</label>
+    <input type="password" maxlength="20" md-maxlength="20" ng-model="vm.models.user.password">
+  </md-input-container>
+  <div class="form-action" layout="row">
+    <md-button class="md-raised md-primary no-margin" flex-sm flex-md ng-class="{'md-processing': vm.isSaving}" ng-click="vm.save()">
+      <span>{{'create' | translate}}</span>
+      <div class="processer"><i class="spinner-wrap"><i class="circle"></i></i></div>
+    </md-button>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+{% if page.Count >= pageNum %}
+  <nav class="pagination" role="navigation">
+    <span class="page-number">Page {{ pageNum }} of {{ page.Count }}</span>
+    {% if page.Prev>0 %}<a class="newer-posts" href="{% page_url page.Prev %}"><span aria-hidden="true">←</span> Newer Posts</a>{% endif %}
+    {% if page.Next>0 %}<a class="older-posts" href="{% page_url page.Next %}">Older Posts <span aria-hidden="true">→</span></a>{% endif %}
+  </nav>
+{% endif %}

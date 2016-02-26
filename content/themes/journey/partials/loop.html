@@ -1,0 +1,12 @@
+{% for post in posts%}
+  <article class="post">
+    <header class="post-header">
+      <div class="post-title"><a href="{{ post.GetURL() }}">{{ post.Title }}</a></div>
+      <section class="post-meta">Posted on <time>{{ post.PublishedAt | date:"02 Jan, 2006" }}</time> by {{ post.Author.Name }}</section>
+    </header>
+    <section class="post-excerpt">
+      <p>{% excerpt %}</p>
+      <p class="read-more"><a href="{{ post.GetURL() }}">Read more >></a></p>
+    </section>
+  </article>
+{% endfor %}

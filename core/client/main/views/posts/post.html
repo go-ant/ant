@@ -1,0 +1,128 @@
+<div class="panel editor" layout="column" flex>
+  <div class="editor-title" layout="row">
+    <div layout="row" flex>
+      <div layout="row" layout-align="center center">
+        <md-button class="md-icon-button menu-button" hide-gt-md aria-label="Toggle Menu" ng-click="vm.openMenu()">
+          <md-icon>menu</md-icon>
+        </md-button>
+      </div>
+      <input type="text" placeholder="Your Post Title" autofocus="autofocus" flex ng-model="vm.models.post.title">
+    </div>
+    <div layout="row" layout-align="center center">
+      <md-button class="md-icon-button" ng-click="vm.toggleSettings()"><md-icon>settings</md-icon></md-button>
+    </div>
+    <div layout="row" layout-align="center center">
+      <md-menu>
+        <md-dropdown-button ng-class="{'md-primary': vm.postStatus == 'published', 'md-processing': vm.isSaving}">
+          <md-button class="md-main" flex ng-click="vm.save()" aria-label="save post" translate="{{vm.btnText}}"></md-button>
+          <md-button class="md-dropdown" ng-click="$mdOpenMenu($event)"><md-icon>expand_more</md-icon></md-button>
+          <div class="processer"><i class="spinner-wrap"><i class="circle"></i></i></div>
+        </md-dropdown-button>
+        <md-menu-content>
+          <div ng-if="vm.models.post.status == 'draft'">
+            <md-menu-item>
+              <md-button aria-label="publish" ng-click="vm.setStatus('published')" translate="publish_now"></md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button aria-label="save draft" ng-click="vm.setStatus('draft')" translate="save_draft"></md-button>
+            </md-menu-item>
+            <md-menu-item ng-if="vm.models.post.id > 0">
+              <md-button aria-label="delete post" ng-click="vm.remove()" translate="post_delete"></md-button>
+            </md-menu-item>
+          </div>
+          <div ng-if="vm.models.post.status == 'published'">
+            <md-menu-item>
+              <md-button aria-label="publish" ng-click="vm.setStatus('published')" translate="update_post"></md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button aria-label="save draft" ng-click="vm.setStatus('draft')" translate="unpublish"></md-button>
+            </md-menu-item>
+            <md-menu-item ng-if="vm.models.post.id > 0">
+              <md-button aria-label="delete post" ng-click="vm.remove(vm.models.post.title)" translate="post_delete"></md-button>
+            </md-menu-item>
+          </div>
+        </md-menu-content>
+      </md-menu>
+    </div>
+  </div>
+
+  <div class="editor-view" layout="row"  ng-class="{'editor-view-markdown': vm.showMarkdown, 'editor-view-preview': !vm.showMarkdown}" flex>
+    <div class="entry-markdown" layout="column" flex>
+      <section class="entry-markdown-content" layout="column" flex>
+        <textarea flex ng-model="vm.models.post.markdown"></textarea>
+      </section>
+      <footer class="entry-extra" layout="row">
+        <div class="desktop-tabs" flex>Markdown</div>
+        <div class="mobile-tabs" flex>
+          <a ng-class="{active: vm.showMarkdown}"  href="javascript:;" ng-click="vm.toggleView()">Markdown</a>
+          <span class="separate">|</span>
+          <a ng-class="{active: !vm.showMarkdown}" href="javascript:;" ng-click="vm.toggleView()" translate="preview"></a>
+        </div>
+        <a class="markdown-help" href="javascript:;" ng-click="vm.showMarkdownHelpe($event)"><md-icon class="md-20">help</md-icon></a>
+      </footer>
+    </div>
+    <div class="entry-preview" layout="column" flex>
+      <md-content class="entry-preview-content" flex><div class="rendered-markdown" ng-bind-html="vm.models.post.html|trustAsHtml"></div></md-content>
+      <footer class="entry-extra" layout="row">
+        <div class="desktop-tabs" flex translate="preview"></div>
+        <div class="mobile-tabs" flex>
+          <a ng-class="{active: vm.showMarkdown}"  href="javascript:;" ng-click="vm.toggleView()">Markdown</a>
+          <span class="separate">|</span>
+          <a ng-class="{active: !vm.showMarkdown}" href="javascript:;" ng-click="vm.toggleView()" translate="preview"></a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <md-sidenav class="md-sidenav-right post-settings" md-component-id="settings" layout-padding>
+    <md-toolbar class="md-theme-light">
+      <h1 class="md-toolbar-tools" translate="post_setting"></h1>
+    </md-toolbar>
+    <md-content>
+
+      <div class="img-zone post-cover-zone" ng-class="{'img-uploaded': vm.postCover != ''}">
+        <img class="source" ng-if="vm.postCover != ''" ng-src="{{vm.postCover}}">
+        <div class="img-desc" translate="add_post_cover"></div>
+        <div class="img-url">
+          <md-input-container>
+            <label translate="posts_url"></label>
+            <input type="text" maxlength="150" md-maxlength="150" ng-model="vm.models.post.cover">
+          </md-input-container>
+          <md-button class="md-raised md-primary no-margin" aria-label="save" ng-click="vm.saveCoverFromUrl()" translate="save"></md-button>
+        </div>
+        <div class="img-source">
+          <md-icon class="md-20 from-photo" ng-click="vm.toggleImgZoneMode($event)">photo</md-icon>
+          <md-icon class="md-20 from-url" ng-click="vm.toggleImgZoneMode($event)">link</md-icon>
+        </div>
+        <div class="img-cancel"><md-icon class="md-20" ng-click="vm.cancelPostCover()">delete</md-icon></div>
+        <div class="progress"></div>
+      </div>
+
+      <md-input-container class="md-icon-float md-block">
+        <label translate="post_url"></label>
+        <md-icon>link</md-icon>
+        <input type="text" maxlength="200" md-maxlength="200" ng-model="vm.models.post.slug">
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block">
+        <label translate="publish_date"></label>
+        <md-icon>today</md-icon>
+        <input type="text" ng-model="vm.models.post.published_at" date-format="YYYY-MM-DD HH:mm:ss">
+        <div class="hint">eg: 2006-01-02 15:04:05</div>
+      </md-input-container>
+      <md-chips placeholder="{{'post_tag' | translate}}" secondary-placeholder="{{'post_tag' | translate}}" ng-model="vm.postTags"></md-chips>
+      <br>
+      <div layout="column"><md-checkbox ng-model="vm.models.post.page">{{'turn_into_page' | translate}}</md-checkbox></div>
+      <div layout="column"><md-checkbox ng-model="vm.models.post.featured">{{'feature_post' | translate}}</md-checkbox></div>
+
+      <h3 translate="extra_content_for_seo"></h3>
+      <md-input-container class="md-block">
+        <label translate="meta_title"></label>
+        <input type="text" maxlength="70" md-maxlength="70" ng-model="vm.models.post.meta_title">
+      </md-input-container>
+      <md-input-container class="md-block">
+        <label translate="meta_description"></label>
+        <textarea maxlength="150" md-maxlength="150" ng-model="vm.models.post.meta_description"></textarea>
+      </md-input-container>
+    </md-content>
+  </md-sidenav>
+</div>

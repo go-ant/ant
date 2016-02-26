@@ -1,0 +1,43 @@
+{
+  "1": {
+    "name": "Owner",
+    "slug": "owner",
+    "description": "Site Owner",
+    "permissions": {
+      "user": ["all"],
+      "post": ["all"],
+      "setting": ["all"],
+      "db": ["all"],
+      "theme": ["all"]
+    },
+    "comment": "do not edit this role data"
+  },
+  "2": {
+    "name": "Administrator",
+    "slug": "administrator",
+    "description": "",
+    "permissions": {
+      "user": ["browse-users", "add-users", "edit-users", "delete-users"],
+      "post": ["all"],
+      "setting": ["all"],
+      "db": ["all"],
+      "theme": ["all"]
+    }
+  },
+  "3": {
+    "name": "Editor",
+    "slug": "editor",
+    "description": "",
+    "permissions": {
+      "post": ["edit-all-posts"]
+    }
+  },
+  "4": {
+    "name": "Author",
+    "slug": "author",
+    "description": "",
+    "permissions": {
+      "post": ["browse-posts", "add-posts", "edit-posts", "delete-posts"]
+    }
+  }
+}

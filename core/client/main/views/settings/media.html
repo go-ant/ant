@@ -1,0 +1,51 @@
+<div ng-controller="setting_general_ctrl">
+  <div class="page-header">
+    <h2 ng-bind="breadcrumb"></h2>
+  </div>
+  <div class="panel  panel-padding table-filter">
+    <div layout="row">
+      <div flex="30" flex-sm="50">
+        <md-input-container md-no-float>
+          <md-icon>search</md-icon>
+          <input type="text" placeholder="Search">
+        </md-input-container>
+      </div>
+      <div class="filter-more" flex><md-button class="md-raised md-primary">Invite User</md-button></div>
+    </div>
+  </div>
+  <div class="panel  panel-padding">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+        <th>Table heading</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      </tbody>
+    </table>
+    <div>
+      <paging class="paging" page="35" page-size="10" total="1000" show-prev-next="true" paging-action="foo('bar', page)"></paging>
+    </div>
+  </div>
+</div>

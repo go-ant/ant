@@ -1,0 +1,93 @@
+.label {
+  position: relative;
+  width: auto;
+  min-height: 26px;
+  line-height: 26px;
+  margin: 6px 4px;
+  padding: 0 8px;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  text-align: center;
+  display: inline-block;
+
+  md-icon {
+    color: #fff;
+  }
+  &:after {
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+  }
+
+  &.bg-green:after {
+    border-color: $clrGreen;
+  }
+
+  &.bg-lightblue:after {
+    border-color: $clrLightBlue;
+  }
+
+  &.bg-orange:after {
+    border-color: $clrOrange;
+  }
+
+  &.bg-red:after {
+    border-color: $clrRed;
+  }
+
+  &.bg-dark:after {
+    border-color: $clrDark;
+  }
+
+  &.bg-light:after {
+    border-color: lighten($clrGrey, 10%);
+  }
+
+  &.bg-white:after {
+    border-color: #fff;
+  }
+
+  &.label-arrow-t:after {
+    top: -10px;
+    left: 50%;
+    border-top-color: transparent!important;
+    border-right-color: transparent!important;;
+    border-left-color: transparent!important;;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    content: '';
+  }
+
+  &.label-arrow-b:after {
+    bottom: -10px;
+    left: 50%;
+    border-bottom-color: transparent!important;;
+    border-right-color: transparent!important;;
+    border-left-color: transparent!important;;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    content: '';
+  }
+
+  &.label-arrow-l:after {
+    top: 50%;
+    left: -10px;
+    border-top-color: transparent!important;;
+    border-bottom-color: transparent!important;;
+    border-left-color: transparent!important;;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+    content: '';
+  }
+
+  &.label-arrow-r:after {
+    top: 50%;
+    right: -10px;
+    border-top-color: transparent!important;;
+    border-bottom-color: transparent!important;;
+    border-right-color: transparent!important;;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+    content: '';
+  }
+}

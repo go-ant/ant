@@ -1,0 +1,48 @@
+md-dropdown-button {
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+  display: flex;
+
+  &[disabled] {
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.12);
+    &:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 3px;
+      cursor: not-allowed;
+      content: '';
+    }
+    .md-button, md-icon {
+      color: rgba(0, 0, 0, 0.26);
+      &+.md-dropdown {
+        border-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+    .md-dropdown {
+      &+.md-button {
+        border-color: rgba(0, 0, 0, 0.05);
+      }
+
+    }
+  }
+  .md-button {
+    margin: 0;
+    padding: 0 16px;
+    border-radius: 0;
+    &+.md-dropdown {
+      border-left: 1px solid $clrLightGrey;
+    }
+  }
+  .md-dropdown {
+    min-width: 0;
+    padding: 0 4px;
+    &+.md-button {
+      border-left: 1px solid $clrLightGrey;
+    }
+  }
+}

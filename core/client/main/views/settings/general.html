@@ -1,0 +1,68 @@
+<div class="page-header">
+  <h2>
+    <md-button class="md-icon-button" hide-gt-md aria-label="Toggle Menu" ng-click="vm.openMenu()">
+      <md-icon>menu</md-icon>
+    </md-button>
+    {{vm.breadcrumb | translate}}
+  </h2>
+</div>
+<div class="panel">
+  <div class="site-cover" ng-style="{'background-image':'url(' + (vm.models.setting.cover || './assets/css/images/cover.jpg') + ')'}">
+    <div class="site-logo" ng-class="{'no-logo': !vm.models.setting.logo}">
+      <img ng-src="{{vm.models.setting.logo}}" ng-if="vm.models.setting.logo">
+      <div class="uploader" ng-click="vm.showImageUpload($event, 'logo')"><md-icon>photo</md-icon></div>
+    </div>
+    <div class="cover-edit"><md-icon class="md-20" ng-click="vm.showImageUpload($event, 'cover')">edit</md-icon></div>
+  </div>
+  <md-content class="md-padding">
+    <md-input-container class="md-block">
+      <label>{{'site_title' | translate}}</label>
+      <input type="text" ng-model="vm.models.setting.title">
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <label>{{'site_description' | translate}}</label>
+      <textarea maxlength="200" md-maxlength="200" ng-model="vm.models.setting.description"></textarea>
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <label>{{'post_per_page' | translate}}</label>
+      <input type="number" ng-model="vm.models.setting.posts_per_page">
+    </md-input-container>
+
+    <md-input-container class="md-block" ng-if="vm.models.themes.length>0">
+      <label>{{'theme' | translate}}</label>
+      <md-select ng-model="vm.models.setting.active_theme">
+        <md-option value="{{theme}}" ng-repeat="theme in vm.models.themes">{{theme}}</md-option>
+      </md-select>
+    </md-input-container>
+
+    <div layout="column">
+      <md-input-container class="md-block">
+        <label>{{'interface_language' | translate}}</label>
+        <md-select ng-model="vm.models.setting.language">
+          <md-option value="{{key}}" ng-repeat="(key,lang) in vm.models.languages">{{lang}}</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+
+    <h3 class="sub-header">{{'code_injection' | translate}}</h3>
+    <md-input-container class="md-block">
+      <label>{{'code_injection_header' | translate}}</label>
+      <textarea maxlength="200" md-maxlength="200" ng-model="vm.models.setting.ant_head"></textarea>
+      <div class="hint" ng-bind-html="'hint.code_inject_into_head'|translate:'{code: \'{% ant_head %}\'}'"></div>
+    </md-input-container>
+    <md-input-container class="md-block">
+      <label>{{'code_injection_footer' | translate}}</label>
+      <textarea maxlength="200" md-maxlength="200" ng-model="vm.models.setting.ant_foot"></textarea>
+      <div class="hint" ng-bind-html="'hint.code_inject_into_foot'|translate:'{code: \'{% ant_foot %}\'}'"></div>
+    </md-input-container>
+    <div class="form-action" layout="row">
+      <md-button class="md-raised md-primary no-margin" flex-sm flex-md ng-class="{'md-processing': vm.isSaving}" ng-click="vm.save()">
+        <span translate="save"></span>
+        <div class="processer"><i class="spinner-wrap"><i class="circle"></i></i></div>
+      </md-button>
+    </div>
+  </md-content>
+
+</div>

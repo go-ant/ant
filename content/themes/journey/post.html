@@ -1,0 +1,12 @@
+{% extends "default.html" %}
+{% block content %}
+  <main class="content">
+    <article class="post {%post_class%}">
+      <header class="post-header">
+        <div class="post-title"><a href="{{ post.GetURL() }}">{{ post.Title }}</a></div>
+        <section class="post-meta">Posted on <time>{{ post.PublishedAt | date:"02 Jan, 2006" }}</time> by {{ post.Author.Name }}</section>
+      </header>
+      <section class="post-content">{{post.Html|safe}}</section>
+    </article>
+  </main>
+{% endblock %}

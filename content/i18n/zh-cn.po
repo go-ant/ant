@@ -1,0 +1,473 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "create_owner"
+msgstr "创建所有者"
+
+msgid "blog_title"
+msgstr "博客标题"
+
+msgid "no_data_found"
+msgstr "没有找到数据"
+
+msgid "create"
+msgstr "创建"
+
+msgid "save"
+msgstr "保存"
+
+msgid "edit"
+msgstr "编辑"
+
+msgid "delete"
+msgstr "删除"
+
+msgid "cancel"
+msgstr "取消"
+
+msgid "preview"
+msgstr "预览"
+
+msgid "slug"
+msgstr "缩略名"
+
+msgid "label"
+msgstr "标签"
+
+msgid "url"
+msgstr "网址"
+
+msgid "last_seen"
+msgstr "最后浏览"
+
+msgid "password"
+msgstr "密码"
+
+msgid "forgot_password"
+msgstr "忘记密码"
+
+msgid "sign_in"
+msgstr "登录"
+
+msgid "sign_out"
+msgstr "注销"
+
+msgid "add_img"
+msgstr "添加图片"
+
+msgid "img_url"
+msgstr "图片地址"
+
+msgid "draft"
+msgstr "草稿"
+
+msgid "published"
+msgstr "已发布"
+
+msgid "save_draft"
+msgstr "保存草稿"
+
+msgid "publish_now"
+msgstr "现在发布"
+
+msgid "update_post"
+msgstr "日志更新"
+
+msgid "unpublish"
+msgstr "取消发布"
+
+msgid "publish_date"
+msgstr "发布日期"
+
+msgid "extra_content_for_seo"
+msgstr "SEO信息"
+
+msgid "meta_title"
+msgstr "Meta 标题"
+
+msgid "meta_description"
+msgstr "Meta 描述"
+
+msgid "post_manage"
+msgstr "日志管理"
+
+msgid "post_list"
+msgstr "日志列表"
+
+msgid "post_add"
+msgstr "日志添加"
+
+msgid "post_edit"
+msgstr "日志编辑"
+
+msgid "post_delete"
+msgstr "日志删除"
+
+msgid "post_title"
+msgstr "日志标题"
+
+msgid "post_setting"
+msgstr "日志设置"
+
+msgid "add_post_cover"
+msgstr "添加封面"
+
+msgid "post_url"
+msgstr "日志地址"
+
+msgid "post_tag"
+msgstr "标签"
+
+msgid "post_status"
+msgstr "状态"
+
+msgid "turn_into_page"
+msgstr "设为静态页面"
+
+msgid "feature_post"
+msgstr "推荐日志"
+
+msgid "user"
+msgstr "用户"
+
+msgid "user_manage"
+msgstr "用户管理"
+
+msgid "user_list"
+msgstr "用户列表"
+
+msgid "user_add"
+msgstr "用户添加"
+
+msgid "user_edit"
+msgstr "用户编辑"
+
+msgid "user_name"
+msgstr "用户名"
+
+msgid "user_profile"
+msgstr "用户资料"
+
+msgid "email"
+msgstr "邮箱"
+
+msgid "location"
+msgstr "地址"
+
+msgid "website"
+msgstr "网站地址"
+
+msgid "bio"
+msgstr "简介"
+
+msgid "password_old"
+msgstr "原密码"
+
+msgid "password_new"
+msgstr "新密码"
+
+msgid "password_verify"
+msgstr "重复密码"
+
+msgid "password_change"
+msgstr "密码修改"
+
+msgid "role"
+msgstr "角色"
+
+msgid "role_manage"
+msgstr "角色管理"
+
+msgid "role_list"
+msgstr "角色列表"
+
+msgid "role_add"
+msgstr "角色添加"
+
+msgid "role_edit"
+msgstr "角色编辑"
+
+msgid "role_name"
+msgstr "角色名称"
+
+msgid "role_description"
+msgstr "角色描述"
+
+msgid "core_permission"
+msgstr "核心权限"
+
+msgid "additional_permission"
+msgstr "自定义权限"
+
+msgid "setting_general"
+msgstr "常规"
+
+msgid "setting_navigation"
+msgstr "网站导航"
+
+msgid "site_title"
+msgstr "标题"
+
+msgid "site_description"
+msgstr "介绍"
+
+msgid "site_logo"
+msgstr "LOGO"
+
+msgid "site_cover"
+msgstr "封面"
+
+msgid "post_per_page"
+msgstr "每页日志数"
+
+msgid "theme"
+msgstr "主题"
+
+msgid "interface_language"
+msgstr "界面语言"
+
+msgid "code_injection"
+msgstr "代码注入"
+
+msgid "code_injection_header"
+msgstr "页头"
+
+msgid "code_injection_footer"
+msgstr "页脚"
+
+msgid "nav.dashboard"
+msgstr "控制台"
+
+msgid "nav.post_manage"
+msgstr "日志管理"
+
+msgid "nav.post_list"
+msgstr "日志列表"
+
+msgid "nav.post_add"
+msgstr "日志添加"
+
+msgid "nav.post_category"
+msgstr "分类"
+
+msgid "nav.post_tag"
+msgstr "标签"
+
+msgid "nav.appearance"
+msgstr "外观"
+
+msgid "nav.theme"
+msgstr "主题"
+
+msgid "nav.user_manage"
+msgstr "用户管理"
+
+msgid "nav.user_list"
+msgstr "用户列表"
+
+msgid "nav.user_add"
+msgstr "用户添加"
+
+msgid "nav.role_manage"
+msgstr "角色管理"
+
+msgid "nav.role_list"
+msgstr "角色列表"
+
+msgid "nav.setting"
+msgstr "设置"
+
+msgid "nav.general"
+msgstr "常规"
+
+msgid "nav.navigation"
+msgstr "网站导航"
+
+msgid "nav.media"
+msgstr "媒体"
+
+msgid "nav.view_profile"
+msgstr "查看资料"
+
+msgid "nav.account_setting"
+msgstr "账号设置"
+
+msgid "hint.code_inject_into_head"
+msgstr "该内容将被插入到每页的<code>{code}</code>标签"
+
+msgid "hint.code_inject_into_foot"
+msgstr "该内容将被插入到每页的<code>{code}</code>标签"
+
+msgid "dlg.markdown_help"
+msgstr "Markdown 帮助"
+
+msgid "dlg.markdown_result"
+msgstr "效果"
+
+msgid "dlg.markdown_syntax_link"
+msgstr "Markdown语法，请参考"
+
+msgid "dlg.would_you_like_to_delete_post"
+msgstr "是否删除日志 `<strong>{title}</strong>` ?"
+
+msgid "dlg.would_you_like_to_delete_role"
+msgstr "是否删除角色 `{name}` ?"
+
+#. Fill Out The Form To Sign In
+msgid "msg.fill_out_the_form_to_sign_in"
+msgstr "请完整填写信息后再登录"
+
+#. Created
+msgid "msg.created"
+msgstr "添加成功"
+
+#. Saved
+msgid "msg.saved"
+msgstr "已保存"
+
+#. Deleted
+msgid "msg.deleted"
+msgstr "已删除"
+
+#. Need To Sign In
+msgid "msg.need_to_sign_in"
+msgstr "请先登录"
+
+#. No Permission To Perform Operation
+msgid "msg.no_permission"
+msgstr "没权限执行该操作"
+
+#. Save Failed
+msgid "msg.save_fail"
+msgstr "保存失败"
+
+#. Load Failed
+msgid "msg.load_fail"
+msgstr "加载失败"
+
+#. Role Name Can Not Be Empty
+msgid "msg.role_name_not_be_empty"
+msgstr "角色名称不能为空"
+
+#. Role Name Cannot Be Longer Than 50 Characters
+msgid "msg.role_name_too_long"
+msgstr "角色名称不能多于50个字符"
+
+#. Does Not Support Numeric Role Name
+msgid "msg.not_support_numeric_role"
+msgstr "不支持纯数字的角色名称"
+
+#. Role Description Cannot Be Longer Than 150 Characters
+msgid "msg.role_description_too_long"
+msgstr "角色描述不能多于150个字符"
+
+#. Role Can Not Be Empty
+msgid "msg.role_not_be_empty"
+msgstr "角色不能为空"
+
+#. Role Already Exist
+msgid "msg.role_exist"
+msgstr "角色已存在"
+
+#. Role Not Found
+msgid "msg.role_not_found"
+msgstr "找不到该角色"
+
+#. Role Have Users Cannot Be Deleted
+msgid "msg.role_have_users_not_be_deleted"
+msgstr "有用户使用该角色，无法删除"
+
+#. Capability Can Not Be Empty
+msgid "msg.perm_not_be_empty"
+msgstr "权限不能为空"
+
+#. Permission Already Exist
+msgid "msg.perm_exist"
+msgstr "权限已存在"
+
+#. User Name Can Not Be Empty
+msgid "msg.user_name_not_be_empty"
+msgstr "用户名不能为空"
+
+#. User Name Cannot Be Longer Than 50 Characters
+msgid "msg.user_name_too_long"
+msgstr "用户名不能多于50个字符"
+
+#. Does Not Support Numeric User Name
+msgid "msg.not_support_numeric_user"
+msgstr "不支持纯数字的用户名"
+
+#. User Password Can Not Be Empty
+msgid "msg.user_password_not_be_empty"
+msgstr "用户密码不能为空"
+
+#. User Password Cannot Be Longer Than 20 Characters
+msgid "msg.user_password_too_long"
+msgstr "用户密码不能多于20个字符"
+
+#. User Already Exist
+msgid "msg.user_exist"
+msgstr "用户已存在"
+
+#. User Not Found
+msgid "msg.user_not_found"
+msgstr "找不到该用户"
+
+#. Password Is Incorrect
+msgid "msg.password_incorrect"
+msgstr "密码错误"
+
+#. Passwords Do Not Match
+msgid "msg.passwords_not_match"
+msgstr "两次密码不一致"
+
+#. Password Is Required For This Operation
+msgid "msg.password_required"
+msgstr "该操作需要提供密码"
+
+#. Password Must Be At Least 8 Characters Long
+msgid "msg.password_at_least_8_char"
+msgstr "密码至少8个字符"
+
+#. Title Cannot Be Longer Than 150 Characters
+msgid "msg.post_title_too_long"
+msgstr "日志标题不能多于150个字符"
+
+#. Post Url Cannot Be Longer Than 200 Characters
+msgid "msg.post_slug_too_long"
+msgstr "日志"
+
+#. Meta Title Cannot Be Longer Than 150 Characters
+msgid "msg.post_meta_title_too_long"
+msgstr "Meta标题不能多于150个字条"
+
+#. Meta Description Be Longer Than 200 Characters
+msgid "msg.post_meta_description_too_long"
+msgstr "Meta描述不能多于150个字条"
+
+#. Post Url Already Exist
+msgid "msg.post_slug_exist"
+msgstr "日志地址已存在"
+
+#. Post Not Found
+msgid "msg.post_not_found"
+msgstr "找不到该日志"
+
+#. File Type Is Not Supported
+msgid "msg.file_not_supported"
+msgstr "不支持该文件类型"
+
+#. The File Is Too Large
+msgid "msg.file_too_large"
+msgstr "文件太大"

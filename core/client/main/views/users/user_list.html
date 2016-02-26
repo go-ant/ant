@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h2>
+    <md-button class="md-icon-button" hide-gt-md aria-label="Toggle Menu" ng-click="vm.openMenu()">
+      <md-icon>menu</md-icon>
+    </md-button>
+    {{vm.breadcrumb | translate}}
+  </h2>
+  <div class="page-action"></div>
+</div>
+<md-button class="md-fab add-item" ui-sref="users/add" ng-if="::vm.isGranted('add-users')"><md-icon>add</md-icon></md-button>
+<div class="panel" ng-if="vm.users">
+  <md-list class="md-list-hover user-list">
+    <md-list-item class="md-2-line md-with-secondary" ng-repeat="user in vm.users">
+      <a class="md-list-item-link" ui-sref="users/edit({userId:user.id})">
+        <div class="md-list-item-inner">
+          <img ng-src="{{user.avatar}}" class="md-avatar" />
+          <div class="md-list-item-text">
+            <h3>{{user.name}}</h3>
+            <p>{{ 'last_seen' | translate }}: {{user.last_login | fromNow:'(Never)'}}</p>
+          </div>
+          <md-divider md-inset ng-if="!$last"></md-divider>
+          <div class="md-secondary"><span class="label bg-orange">{{user.roles[0].name}}</span></div>
+        </div>
+      </a>
+    </md-list-item>
+  </md-list>
+  <div>
+    <paging class="paging" hide-if-empty="true" page="vm.pagination.page" page-size="vm.pagination.per_page" total="vm.pagination.total" show-prev-next="true" paging-action="vm.getPostList('', page)"></paging>
+  </div>
+</div>
+

@@ -1,0 +1,27 @@
+.page-error {
+  padding-top: 3rem;
+
+  &.page-404 {
+    color: #999;
+    text-align: center;
+    .error-code {
+      line-height: .9em;
+      margin: 0;
+      font-size: 10rem;
+      font-weight: 500;
+    }
+    .error-description {
+      margin: 1rem 0;
+      font-size: 2.6rem;
+      font-weight: 200;
+    }
+    .error-link {
+      color: $clrLightBlue;
+      font-size: 1.4rem;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<div class="page-header">
+  <h2>
+    <md-button class="md-icon-button" hide-gt-md aria-label="Toggle Menu" ng-click="vm.openMenu()">
+      <md-icon>menu</md-icon>
+    </md-button>
+    {{vm.breadcrumb | translate}}
+  </h2>
+  <div class="page-action"></div>
+</div>
+<md-button class="md-fab add-item" ui-sref="posts/add" ng-if="::vm.isGranted(['add-posts', 'edit-all-posts'])"><md-icon>add</md-icon></md-button>
+<div class="panel panel-padding" ng-if="vm.models.posts">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>{{'post_title' | translate}}</th>
+      <th style="width: 130px;">{{'post_status' | translate}}</th>
+      <th style="width: 40px;"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="no-data" ng-if="vm.models.posts.length==0"><td colspan="3">{{'no_data_found' | translate}}</td></tr>
+    <tr class="single-line" ng-repeat="post in vm.models.posts">
+      <td>
+        <a ui-sref="posts/edit({postId:post.id})" ng-if="::vm.allowEditPosts">{{::post.title}}</a>
+        <span ng-if="::!vm.allowEditPosts">{{::post.title}}</span>
+      </td>
+      <td><span class="label" ng-class="{'published': 'bg-green', 'draft': 'bg-orange'}[post.status]">{{::post.status | translate}}</span></td>
+      <td>
+        <md-button class="md-fab md-mini" aria-label="delete post" ng-click="vm.remove(post.id, post.title)" ng-if="::vm.isGranted(['delete-posts', 'edit-all-posts'])">
+          <md-icon class="md-20">delete</md-icon>
+        </md-button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div>
+    <paging class="paging" hide-if-empty="true" page="vm.pagination.page" page-size="vm.pagination.per_page" total="vm.pagination.total" show-prev-next="true" paging-action="vm.getPostList('', page)"></paging>
+  </div>
+</div>

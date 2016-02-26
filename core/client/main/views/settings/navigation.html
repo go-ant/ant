@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h2>
+    <md-button class="md-icon-button" hide-gt-md aria-label="Toggle Menu" ng-click="vm.openMenu()">
+      <md-icon>menu</md-icon>
+    </md-button>
+    {{vm.breadcrumb | translate}}
+  </h2>
+</div>
+<div class="panel panel-padding">
+  <div class="blog-nav">
+    <div class="item" layout="row" ng-repeat="nav in vm.models.setting.navigation">
+      <md-input-container class="md-block" flex>
+        <label>{{'label' | translate}}</label>
+        <input type="text" ng-model="nav.label">
+      </md-input-container>
+      <span class="separate"></span>
+      <md-input-container class="md-block" flex>
+        <label>{{'url' | translate}}</label>
+        <input type="text" ng-model="nav.url">
+      </md-input-container>
+      <md-button class="md-fab md-mini" aria-label="delete navigation">
+        <md-icon class="md-20" ng-click="vm.removeNav($index)">delete</md-icon>
+      </md-button>
+    </div>
+
+    <form ng-submit="vm.addNav()">
+    <div class="item-add" layout="row">
+        <md-input-container class="md-block" flex>
+          <label>{{'label' | translate}}</label>
+          <input type="text" id="txt-label" ng-model="vm.models.nav.label">
+        </md-input-container>
+        <span class="separate"></span>
+        <md-input-container  class="md-block" flex>
+          <label>{{'url' | translate}}</label>
+          <input type="text" ng-model="vm.models.nav.url">
+        </md-input-container>
+        <md-button class="md-fab md-mini" type="submit" aria-label="add navigation">
+          <md-icon class="md-20">add</md-icon>
+        </md-button>
+    </div>
+    </form>
+
+    <div class="form-action" layout="row">
+      <md-button class="md-raised md-primary no-margin" flex-sm flex-md ng-class="{'md-processing': vm.isSaving}" ng-click="vm.save()">
+        <span>{{'save' | translate}}</span>
+        <div class="processer"><i class="spinner-wrap"><i class="circle"></i></i></div>
+      </md-button>
+    </div>
+  </div>
+</div>

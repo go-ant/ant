@@ -1,0 +1,64 @@
+.paging {
+  text-align: right;
+  display: block;
+
+  ul {
+    margin: 20px 0 10px;
+    padding: 0;
+    display: inline-block;
+  }
+
+  li {
+    margin-left: 10px;
+    outline: none;
+    display: inline-block;
+
+    &.active {
+      span {
+        border-color: #03a9f4;
+        box-shadow: 0 1px 2px rgba(0,0,0,.26);
+        background: #03a9f4;
+        color: #fff;
+        cursor: default;
+        &:hover {
+          background: #03a9f4;
+        }
+      }
+    }
+
+    &.disabled {
+      span {
+        color: #ddd;
+        cursor: not-allowed;
+
+        &:hover {
+          background: transparent;
+        }
+      }
+    }
+
+    span {
+      line-height: 1.42857;
+      padding: .5rem .8rem;
+      border-radius: 2px;
+      color: #767676;
+      cursor: pointer;
+      display: inline-block;
+
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
+}
+
+@media (max-width: 959px) {
+  .paging {
+    text-align: center;
+    li {
+      span {
+        padding: .5rem 1rem;
+      }
+    }
+  }
+}

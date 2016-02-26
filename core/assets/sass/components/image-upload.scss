@@ -1,0 +1,118 @@
+.img-zone {
+  position: relative;
+  min-height: 60px;
+  margin: 16px 0;
+  border-radius: 5px;
+  background-color: lighten($clrDark, 63%);
+
+  &.img-uploading {
+    .progress {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, .8) url(images/loading.gif) 50% 50% no-repeat;
+    }
+  }
+
+  &.img-uploaded {
+    .img-desc {
+      display: none;
+    }
+    .img-url {
+      display: none;
+    }
+    .img-source {
+      display: none;
+    }
+    .img-cancel {
+      display: block;
+    }
+  }
+
+  &.img-source-url {
+    padding: 16px 0 48px;
+    .source {
+      display: none;
+    }
+    .img-desc {
+      display: none;
+    }
+    .img-url {
+      display: block;
+    }
+    .from-photo {
+      display: block;
+    }
+    .from-url {
+      display: none;
+    }
+
+  }
+
+  .source {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+  }
+  .img-desc {
+    padding: 56px 0;
+    color: $clrGrey;
+    text-align: center;
+    cursor: pointer;
+    strong {
+      color: $clrDark;
+    }
+  }
+  .img-url {
+    width: 70%;
+    margin: auto;
+    display: none;
+    .md-button {
+      width: 100%;
+    }
+  }
+  .img-source {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    md-icon {
+      padding: 10px;
+      &:hover {
+        color: $clrPrimary;
+      }
+    }
+  }
+  .from-photo {
+    display: none;
+  }
+  .img-cancel {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    cursor: pointer;
+    display: none;
+    md-icon {
+      padding: 10px;
+      color: #fff;
+      &:hover {
+        color: $clrPrimary;
+      }
+    }
+  }
+}
+
+.dlg-image-upload {
+  .img-zone {
+    margin: 0;
+    .img-cancel {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "user": [
+    {
+      "name": "Browse Users",
+      "slug": "browse-users"
+    },
+    {
+      "name": "Add Users",
+      "slug": "add-users"
+    },
+    {
+      "name": "Edit Users",
+      "slug": "edit-users"
+    },
+    {
+      "name": "Delete Users",
+      "slug": "delete-users"
+    },
+    {
+      "name": "Browse Roles",
+      "slug": "browse-roles"
+    },
+    {
+      "name": "Add Roles",
+      "slug": "add-roles"
+    },
+    {
+      "name": "Edit Roles",
+      "slug": "edit-roles"
+    },
+    {
+      "name": "Delete Roles",
+      "slug": "delete-roles"
+    },
+    {
+      "name": "Assign Roles",
+      "slug": "assign-roles"
+    }
+  ],
+  "post": [
+    {
+      "name": "Browse Posts",
+      "slug": "browse-posts"
+    },
+    {
+      "name": "Add Posts",
+      "slug": "add-posts"
+    },
+    {
+      "name": "Edit Posts",
+      "slug": "edit-posts"
+    },
+    {
+      "name": "Delete Posts",
+      "slug": "delete-posts"
+    },
+    {
+      "name": "Edit All Posts",
+      "slug": "edit-all-posts"
+    }
+  ],
+  "db": [
+    {
+      "name": "Export Database",
+      "slug": "export-database"
+    },
+    {
+      "name": "Import database",
+      "slug": "import-database"
+    }
+  ],
+  "setting": [
+    {
+      "name": "Edit settings",
+      "slug": "edit-settings"
+    }
+  ],
+  "theme": [
+    {
+      "name": "Switch Themes",
+      "slug": "switch-themes"
+    },
+    {
+      "name": "Edit themes",
+      "slug": "edit-themes"
+    }
+  ]
+}

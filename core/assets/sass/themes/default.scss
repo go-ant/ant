@@ -1,0 +1,302 @@
+@import "../variable";
+$bgSideNav: #303030;
+
+/*
+ * Angular Material CSS Overwrite
+ */
+.md-button {
+  &.md-primary:not([disabled]) {
+    color: $clrPrimary;
+  }
+  &.md-raised {
+    &.md-primary:not([disabled]), &.md-primary:not([disabled]):hover {
+      background-color: $clrPrimary;
+      color: #fff;
+    }
+  }
+  &.md-fab {
+    &.md-primary:not([disabled]), &.md-primary:not([disabled]):hover {
+      background-color: $clrPrimary;
+      color: #fff;
+    }
+  }
+}
+
+a {
+  &.md-button.md-fab, &.md-button.md-fab:not([disabled]):hover {
+    background-color: $clrPrimary;
+    color: #fff;
+  }
+  &.md-link {
+    &.md-primary {
+      color: $clrPrimary;
+    }
+  }
+}
+md-toolbar {
+  &:not(.md-menu-toolbar) {
+    background-color: transparent;
+    color: $clrDarkGrey;
+  }
+}
+md-dialog {
+  md-toolbar {
+    background-color: $clrPrimary;
+  }
+}
+md-input-container {
+  &:not(.md-input-invalid).md-input-focused {
+    md-icon {
+      color: $clrPrimary;
+    }
+    label {
+      color: $clrPrimary;
+    }
+    .md-input {
+      border-color: $clrPrimary;
+    }
+  }
+}
+
+md-switch {
+  &.md-checked {
+    .md-bar {
+      background-color: rgba($clrPrimary, .5);
+    }
+    .md-thumb {
+      background-color: $clrPrimary;
+    }
+  }
+}
+md-select {
+  &:not([disabled]):focus {
+    .md-select-label {
+      border-bottom-color: $clrPrimary;
+    }
+    .md-select-value {
+      border-bottom-color: $clrPrimary;
+    }
+  }
+
+}
+md-select-menu {
+  md-option[selected] {
+    color: $clrPrimary!important;
+  }
+}
+md-tabs {
+  .md-tab {
+    &.md-active, &.md-focused {
+      color: $clrPrimary;
+    }
+
+    .md-ripple-container {
+      color: $clrPrimary!important;
+    }
+  }
+}
+md-toast {
+  .md-toast-content {
+    background-color: $clrPrimary;
+  }
+  &.md-success-theme {
+    .md-toast-content {
+      background-color: $clrGreen;
+    }
+  }
+  &.md-warn-theme {
+    .md-toast-content {
+      background-color: $clrOrange;
+    }
+  }
+  &.md-fail-theme {
+    .md-toast-content {
+      background-color: $clrRed;
+    }
+  }
+}
+md-checkbox {
+  &.md-checked {
+    .md-icon {
+      background-color: $clrPrimary;
+    }
+  }
+}
+
+/*
+ * Custom CSS
+ */
+body { background-color: #fff;}
+#loading-bar .bar {
+  height: 3px;
+  background-color: $clrPrimary;
+}
+#loading-bar-spinner .spinner-icon {
+  border-top-color:  $clrPrimary;
+  border-left-color: $clrPrimary;
+}
+.processer {
+  background-color: $clrPrimary;
+}
+.paging {
+  li {
+    &.active {
+      span {
+        border-color: $clrPrimary;
+        background: $clrPrimary;
+        color: #fff;
+        &:hover {
+          background: $clrPrimary;
+        }
+      }
+    }
+  }
+}
+md-dropdown-button {
+  &.md-processing {
+    .processer {
+      background-color: $clrOrange;
+    }
+    &.md-primary {
+      .processer {
+        background-color: $clrPrimary;
+      }
+    }
+  }
+  &:not([disabled]) {
+    background-color: $clrOrange;
+    .md-button, md-icon {
+      color: #fff;
+    }
+    .md-button {
+      border-color: darken($clrOrange, 3%);
+    }
+  }
+
+  &.md-primary:not([disabled]) {
+    background-color: $clrPrimary;
+    .md-button, md-icon {
+      color: #fff;
+    }
+    .md-button {
+      border-color: darken($clrPrimary, 3%);
+    }
+  }
+
+}
+md-toolbar.top-nav  {
+  background: $bgSideNav;
+  md-icon {
+    &.md-default-theme {
+      color: #fff;
+    }
+  }
+  .profile {
+    md-list {
+      background: #fff;
+    }
+    .md-button {
+      background: #fff;
+    }
+  }
+}
+.gl-signin {
+  &>div {
+    h2 {
+      background-color: $clrPrimary;
+    }
+  }
+}
+.side-nav {
+  background: $bgSideNav;
+  md-toolbar {
+    &.md-default-theme {
+      background: $bgSideNav;
+      color: #fff;
+    }
+    md-icon {
+      margin: 0 20px 0 10px;
+    }
+  }
+  md-content {
+    background-color: $bgSideNav;
+    &.md-default-theme {
+      background-color: transparent;
+    }
+  }
+  md-icon {
+    color: #fff;
+  }
+  .md-button {
+    position: relative;
+    background: $bgSideNav;
+  }
+  .logo {
+    color: #fff;
+    a {
+      width: 150px;
+      height: 100%;
+      line-height: 200%;
+      padding-left: 45px;
+      background: url(../images/logo.png) 0 50% no-repeat;
+      background-size: auto 60%;
+      font-size: 3rem;
+      display: block;
+    }
+  }
+}
+menu-toggle {
+  border-bottom: 1px solid darken($bgSideNav, 5%);
+  color: #fff;
+  display: block;
+
+  &.active {
+    >.md-button {
+      background-color: darken($bgSideNav, 5%);
+      &:not([disabled]):hover {
+        background-color: darken($bgSideNav, 5%);
+      }
+    }
+    .md-button {
+      background-color: darken($bgSideNav, 5%);
+    }
+  }
+  >.md-button {
+    &:not([disabled]):hover {
+      background-color: darken($bgSideNav, 3%);
+    }
+  }
+  md-list {
+    menu-link {
+      &.active {
+        .md-button {
+          color: $clrPrimary;
+        }
+      }
+    }
+    .md-button {
+      color: $clrGrey;
+      &:not([disabled]):hover {
+        background-color: darken($bgSideNav, 8%);
+      }
+    }
+  }
+}
+.profile-menu {
+  md-list-item {
+    .md-button {
+      background-color: darken($bgSideNav, 5%);
+      &:not([disabled]):hover {
+        background-color: darken($bgSideNav, 8%);
+      }
+    }
+  }
+}
+.page-header {
+  h2 {
+    color: $clrPrimary;
+  }
+}
+.page-content {
+  background-color: #f1f1f1;
+}

@@ -1,0 +1,50 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+
+html { font-size: 62.5%;}
+body { line-height: 1.75em; color: #3e3e3e; font-size: 1.6rem; font-family: roboto, sans-serif; font-weight: 300; letter-spacing: 0.01rem;}
+a { color: #4a4a4a; text-decoration: none;}
+.page-title { line-height: 1em; margin: 10px 0; color: #fff; font-size: 6rem; font-weight: 400;}
+.page-description { margin: 0; color: rgba(255,255,255,0.8); font-size: 2rem; font-weight: 400;}
+
+.main-header { position: relative; width: 100%; height: 100vh; max-height: 30vh; background: #222 50% 50% no-repeat; background-size: cover; text-align: center; display: table;}
+.main-header.no-cover { background-image: url(../images/journey.jpg);}
+.main-header .container { vertical-align: middle; display: table-cell;}
+.main-header .container .inner { width: 80%; max-width: 760px; margin: auto; color: #fff;}
+
+.main-nav {}
+.main-nav ul{ position: absolute; top: 20px; right: 1rem; margin: 0;}
+.main-nav li{ margin: 0 2rem; display: inline-block;}
+.main-nav a{ color: #fff; font-size: 15px; font-weight: 400; text-decoration: none;}
+.main-nav a:hover { text-decoration: underline;}
+
+.main-footer { margin-top: 3rem; padding: 1.5rem 0; font-size: 1.2rem; text-align: center;}
+.main-footer a { font-weight: 400;}
+.main-footer a:hover { text-decoration: underline;}
+
+main.content { width: 80%; max-width: 860px; margin: auto;}
+
+.post { position: relative; margin: 4rem auto; padding-bottom: 2rem; border-bottom: solid 1px #e7eef2; word-wrap: break-word;}
+.post:after { position: absolute; bottom: -5px; left: 50%; width: 7px; height: 7px; margin-left: -4px; border:#e7eef2 1px solid; border-radius: 100%; background: #fff; box-shadow: #fff 0 0 0 5px; content: '';}
+.post .post-header{}
+.post .post-title{ font-size: 3.6rem; font-weight: 700;}
+.post .post-meta{ margin: 1rem 0 1.5rem; color: #9eabb3; font-size: 1.4rem;}
+.post .post-content{ font-size: 2rem;}
+.post .post-content a { color: #999;}
+.post .post-content a:hover { text-decoration: underline;}
+.post .post-excerpt p{ margin: 0; color: #555; font-size: 1.6rem;}
+.post .post-excerpt a { font-weight: 400;}
+.post .post-excerpt a:hover { text-decoration: underline;}
+.post .post-excerpt .read-more { padding: .5rem 1rem 0 0; text-align: right;}
+
+.pagination { position: relative; line-height: 2.5em; margin-top: 4rem; color: #9eabb3; font-size: 1.4rem; text-align: center;}
+.pagination a {color: #9eabb3; transition: all 0.2s ease;}
+.pagination a:hover { border-color: #98a0a4; color: #889093;}
+.pagination .page-number{ display: inline-block;}
+.pagination .newer-posts, .pagination .older-posts{ position: absolute; top: -0.1rem; padding: 0 1rem; border: #bfc8cd 1px solid; border-radius: 5px;}
+.pagination .newer-posts{ left: 0;}
+.pagination .older-posts{ right: 0;}
+
+.tpl-home:not(.paged) .main-header{ max-height: none;}
+
+.tpl-post .post .post-header { margin-bottom: 3rem;}

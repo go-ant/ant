@@ -1,0 +1,11 @@
+{% extends "default.html" %}
+{% block content %}
+  <main class="content">
+    <article class="post {%post_class%}">
+      <header class="post-header">
+        <div class="post-title"><a href="{{ post.GetURL() }}">{{ post.Title }}</a></div>
+      </header>
+      <section class="post-content">{{post.Html|safe}}</section>
+    </article>
+  </main>
+{% endblock %}

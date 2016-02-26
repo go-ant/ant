@@ -1,0 +1,473 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "create_owner"
+msgstr "Create Owner"
+
+msgid "blog_title"
+msgstr "Blog Title"
+
+msgid "no_data_found"
+msgstr "No Data Found"
+
+msgid "create"
+msgstr "Create"
+
+msgid "save"
+msgstr "Save"
+
+msgid "edit"
+msgstr "Edit"
+
+msgid "delete"
+msgstr "Delete"
+
+msgid "cancel"
+msgstr "Cancel"
+
+msgid "preview"
+msgstr "Preview"
+
+msgid "slug"
+msgstr "Slug"
+
+msgid "label"
+msgstr "Label"
+
+msgid "url"
+msgstr "Url"
+
+msgid "last_seen"
+msgstr "Last seen"
+
+msgid "password"
+msgstr "Password"
+
+msgid "forgot_password"
+msgstr "Forgotten password"
+
+msgid "sign_in"
+msgstr "Sign In"
+
+msgid "sign_out"
+msgstr "Sign Out"
+
+msgid "add_img"
+msgstr "Add Image"
+
+msgid "img_url"
+msgstr "Image Url"
+
+msgid "draft"
+msgstr "Draft"
+
+msgid "published"
+msgstr "Published"
+
+msgid "save_draft"
+msgstr "Save Draft"
+
+msgid "publish_now"
+msgstr "Publish Now"
+
+msgid "update_post"
+msgstr "Update Post"
+
+msgid "unpublish"
+msgstr "Unpublish"
+
+msgid "publish_date"
+msgstr "Publish Date"
+
+msgid "extra_content_for_seo"
+msgstr "Extra content for SEO"
+
+msgid "meta_title"
+msgstr "Meta Title"
+
+msgid "meta_description"
+msgstr "Meta Description"
+
+msgid "post_manage"
+msgstr "Posts"
+
+msgid "post_list"
+msgstr "All Posts"
+
+msgid "post_add"
+msgstr "Add Post"
+
+msgid "post_edit"
+msgstr "Edit Post"
+
+msgid "post_delete"
+msgstr "Delete Post"
+
+msgid "post_title"
+msgstr "Title"
+
+msgid "post_setting"
+msgstr "Post Settings"
+
+msgid "add_post_cover"
+msgstr "Add Post Cover"
+
+msgid "post_url"
+msgstr "Post Url"
+
+msgid "post_tag"
+msgstr "Post Tag"
+
+msgid "post_status"
+msgstr "Status"
+
+msgid "turn_into_page"
+msgstr "Turn into a static page"
+
+msgid "feature_post"
+msgstr "Feature this post"
+
+msgid "user"
+msgstr "User"
+
+msgid "user_manage"
+msgstr "Users"
+
+msgid "user_list"
+msgstr "All Users"
+
+msgid "user_add"
+msgstr "Add User"
+
+msgid "user_edit"
+msgstr "Edit User"
+
+msgid "user_name"
+msgstr "Name"
+
+msgid "user_profile"
+msgstr "Profile"
+
+msgid "email"
+msgstr "Email"
+
+msgid "location"
+msgstr "Location"
+
+msgid "website"
+msgstr "WebSite"
+
+msgid "bio"
+msgstr "Bio"
+
+msgid "password_old"
+msgstr "Old Password"
+
+msgid "password_new"
+msgstr "New Password"
+
+msgid "password_verify"
+msgstr "Verify Password"
+
+msgid "password_change"
+msgstr "Change Password"
+
+msgid "role"
+msgstr "Role"
+
+msgid "role_manage"
+msgstr "Roles"
+
+msgid "role_list"
+msgstr "All Roles"
+
+msgid "role_add"
+msgstr "Add Role"
+
+msgid "role_edit"
+msgstr "Edit Role"
+
+msgid "role_name"
+msgstr "Name"
+
+msgid "role_description"
+msgstr "Description"
+
+msgid "core_permission"
+msgstr "Core Capabilities"
+
+msgid "additional_permission"
+msgstr "Additional Capabilities"
+
+msgid "setting_general"
+msgstr "General"
+
+msgid "setting_navigation"
+msgstr "Navigation"
+
+msgid "site_title"
+msgstr "Site Title"
+
+msgid "site_description"
+msgstr "Site Description"
+
+msgid "site_logo"
+msgstr "Site Logo"
+
+msgid "site_cover"
+msgstr "Site Cover"
+
+msgid "post_per_page"
+msgstr "Posts Per Page"
+
+msgid "theme"
+msgstr "Theme"
+
+msgid "interface_language"
+msgstr "Interface Language"
+
+msgid "code_injection"
+msgstr "Code Injection"
+
+msgid "code_injection_header"
+msgstr "Site Header"
+
+msgid "code_injection_footer"
+msgstr "Site Footer"
+
+msgid "nav.dashboard"
+msgstr "Dashboard"
+
+msgid "nav.post_manage"
+msgstr "Posts"
+
+msgid "nav.post_list"
+msgstr "All Posts"
+
+msgid "nav.post_add"
+msgstr "Add Post"
+
+msgid "nav.post_category"
+msgstr "Categories"
+
+msgid "nav.post_tag"
+msgstr "Tags"
+
+msgid "nav.appearance"
+msgstr "Appearance"
+
+msgid "nav.theme"
+msgstr "Themes"
+
+msgid "nav.user_manage"
+msgstr "Users"
+
+msgid "nav.user_list"
+msgstr "All Users"
+
+msgid "nav.user_add"
+msgstr "Add User"
+
+msgid "nav.role_manage"
+msgstr "Roles"
+
+msgid "nav.role_list"
+msgstr "All Roles"
+
+msgid "nav.setting"
+msgstr "Settings"
+
+msgid "nav.general"
+msgstr "General"
+
+msgid "nav.navigation"
+msgstr "Navigation"
+
+msgid "nav.media"
+msgstr "Media"
+
+msgid "nav.view_profile"
+msgstr "View Profile"
+
+msgid "nav.account_setting"
+msgstr "Account Setting"
+
+msgid "hint.code_inject_into_head"
+msgstr "will be injected into the <code>{code}</code> tag on every page"
+
+msgid "hint.code_inject_into_foot"
+msgstr "will be injected into the <code>{code}</code> tag on every page"
+
+msgid "dlg.markdown_help"
+msgstr "Markdown Help"
+
+msgid "dlg.markdown_result"
+msgstr "Result"
+
+msgid "dlg.markdown_syntax_link"
+msgstr "For further Markdown syntax reference"
+
+msgid "dlg.would_you_like_to_delete_post"
+msgstr "Would you like to delete post `<strong>{title}</strong>` ?"
+
+msgid "dlg.would_you_like_to_delete_role"
+msgstr "Would you like to delete role `<strong>{name}</strong>`  ?"
+
+#. Fill Out The Form To Sign In
+msgid "msg.fill_out_the_form_to_sign_in"
+msgstr "Please Fill Out The Form To Sign In"
+
+#. Created
+msgid "msg.created"
+msgstr "Created"
+
+#. Saved
+msgid "msg.saved"
+msgstr "Saved"
+
+#. Deleted
+msgid "msg.deleted"
+msgstr "Deleted"
+
+#. Need To Sign In
+msgid "msg.need_to_sign_in"
+msgstr "Need To Sign In"
+
+#. No Permission To Perform Operation
+msgid "msg.no_permission"
+msgstr "No Permission To Perform Operation"
+
+#. Save Failed
+msgid "msg.save_fail"
+msgstr "Saving Failed"
+
+#. Load Failed
+msgid "msg.load_fail"
+msgstr "Loading Failed"
+
+#. Role Name Can Not Be Empty
+msgid "msg.role_name_not_be_empty"
+msgstr "Role Name Can Not Be Empty"
+
+#. Role Name Cannot Be Longer Than 50 Characters
+msgid "msg.role_name_too_long"
+msgstr "`Name` Cannot Be Longer Than 50 Characters"
+
+#. Does Not Support Numeric Role Name
+msgid "msg.not_support_numeric_role"
+msgstr "Does Not Support Numeric Role Name"
+
+#. Role Description Cannot Be Longer Than 150 Characters
+msgid "msg.role_description_too_long"
+msgstr "`Description` Cannot Be Longer Than 150 Characters"
+
+#. Role Can Not Be Empty
+msgid "msg.role_not_be_empty"
+msgstr "Role Can Not Be Empty"
+
+#. Role Already Exist
+msgid "msg.role_exist"
+msgstr "Role Already Exist"
+
+#. Role Not Found
+msgid "msg.role_not_found"
+msgstr "Role Not Found"
+
+#. Role Have Users Cannot Be Deleted
+msgid "msg.role_have_users_not_be_deleted"
+msgstr "Role Have Users Cannot Be Deleted"
+
+#. Capability Can Not Be Empty
+msgid "msg.perm_not_be_empty"
+msgstr "Capability Can Not Be Empty"
+
+#. Permission Already Exist
+msgid "msg.perm_exist"
+msgstr "Permission Already Exist"
+
+#. User Name Can Not Be Empty
+msgid "msg.user_name_not_be_empty"
+msgstr "User Name Can Not Be Empty"
+
+#. User Name Cannot Be Longer Than 50 Characters
+msgid "msg.user_name_too_long"
+msgstr "User Name Cannot Be Longer Than 50 Characters"
+
+#. Does Not Support Numeric User Name
+msgid "msg.not_support_numeric_user"
+msgstr "Does Not Support Numeric User Name"
+
+#. User Password Can Not Be Empty
+msgid "msg.user_password_not_be_empty"
+msgstr "User Password Can Not Be Empty"
+
+#. User Password Cannot Be Longer Than 20 Characters
+msgid "msg.user_password_too_long"
+msgstr "User Password Cannot Be Longer Than 20 Characters"
+
+#. User Already Exist
+msgid "msg.user_exist"
+msgstr "User Already Exist"
+
+#. User Not Found
+msgid "msg.user_not_found"
+msgstr "User Not Found"
+
+#. Password Is Incorrect
+msgid "msg.password_incorrect"
+msgstr "Password Is Incorrect"
+
+#. Passwords Do Not Match
+msgid "msg.passwords_not_match"
+msgstr "Passwords Do Not Match"
+
+#. Password Is Required For This Operation
+msgid "msg.password_required"
+msgstr "Password Is Required For This Operation"
+
+#. Password Must Be At Least 8 Characters Long
+msgid "msg.password_at_least_8_char"
+msgstr "Password Must Be At Least 8 Characters Long"
+
+#. Title Cannot Be Longer Than 150 Characters
+msgid "msg.post_title_too_long"
+msgstr "Title Cannot Be Longer Than 150 Characters"
+
+#. Post Url Cannot Be Longer Than 200 Characters
+msgid "msg.post_slug_too_long"
+msgstr "Post Url Cannot Be Longer Than 200 Characters"
+
+#. Meta Title Cannot Be Longer Than 150 Characters
+msgid "msg.post_meta_title_too_long"
+msgstr "Meta Title Cannot Be Longer Than 150 Characters"
+
+#. Meta Description Be Longer Than 200 Characters
+msgid "msg.post_meta_description_too_long"
+msgstr "Meta Description Be Longer Than 200 Characters"
+
+#. Post Url Already Exist
+msgid "msg.post_slug_exist"
+msgstr "Post Url Already Exist"
+
+#. Post Not Found
+msgid "msg.post_not_found"
+msgstr "Post Not Found"
+
+#. File Type Is Not Supported
+msgid "msg.file_not_supported"
+msgstr "File Type Is Not Supported"
+
+#. The File Is Too Large
+msgid "msg.file_too_large"
+msgstr "The File Is Too Large"

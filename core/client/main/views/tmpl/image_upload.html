@@ -1,0 +1,30 @@
+<md-dialog class="dlg-image-upload" aria-label="Image Upload" ng-cloak>
+  <md-dialog-content flow-init flow-attrs="{accept:'image/*'}" flow-files-submitted="$flow.upload()"
+                     flow-file-success="vm.success($file, $message)" flow-file-error="vm.error($file, $message)">
+    <div class="md-dialog-content">
+      <div class="img-zone" ng-class="{'img-uploaded': !vm.allowUpload, 'img-source-url': vm.imgFromUrl}">
+        <img class="source" ng-if="vm.source != ''" ng-src="{{vm.source}}">
+        <div class="img-desc" translate="add_img" flow-btn></div>
+        <div class="img-url">
+          <div layout="column">
+            <md-input-container>
+              <label translate="img_url"></label>
+              <input type="text" maxlength="150" md-maxlength="150" ng-model="vm.sourceUrl">
+            </md-input-container>
+          </div>
+          <md-button class="md-raised md-primary no-margin" aria-label="save" ng-click="vm.saveImageFromUrl()" translate="save"></md-button>
+        </div>
+        <div class="img-source">
+          <md-icon class="md-20 from-photo" ng-click="vm.toggleImgZoneMode($event)">photo</md-icon>
+          <md-icon class="md-20 from-url" ng-click="vm.toggleImgZoneMode($event)">link</md-icon>
+        </div>
+        <div class="img-cancel"><md-icon class="md-20" ng-click="vm.deleteImage()">delete</md-icon></div>
+        <div class="progress"></div>
+      </div>
+    </div>
+  </md-dialog-content>
+  <md-dialog-actions layout="row">
+    <md-button aria-label="cancel image" ng-click="vm.cancel()" translate="cancel"></md-button>
+    <md-button class="md-primary" aria-label="save image" ng-click="vm.save()" translate="save"></md-button>
+  </md-dialog-actions>
+</md-dialog>

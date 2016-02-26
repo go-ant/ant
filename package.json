@@ -1,0 +1,38 @@
+{
+  "name": "GoAnt",
+  "version": "0.1.0",
+  "description": "Just a blogging platform.",
+  "author": "GoAnt Foundation",
+  "homepage": "http://goant.org/",
+  "keywords": [
+    "goant",
+    "blog",
+    "lightweight cms"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/goant/goant.git"
+  },
+  "licenses": [
+    {
+      "type": "GPL2.0",
+      "url": "https://github.com/go-ant/ant/master/LICENSE"
+    }
+  ],
+  "devDependencies": {
+    "babel": "^5.8.3",
+    "gulp": "latest",
+    "gulp-angular-templatecache": "^1.7.0",
+    "gulp-babel": "^5.1.0",
+    "gulp-clean": "latest",
+    "gulp-jsonminify": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-minify-html": "latest",
+    "gulp-native2ascii": "latest",
+    "gulp-po2json-angular-translate": "0.0.1",
+    "gulp-rename": "latest",
+    "gulp-replace": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglifyjs": "latest"
+  }
+}

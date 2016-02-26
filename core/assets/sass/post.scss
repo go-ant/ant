@@ -1,0 +1,141 @@
+.editor {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  margin: 0;
+
+  md-icon {
+    color: $clrGrey;
+  }
+  .editor-title {
+    padding: 8px;
+    border-bottom: 1px solid $clrLightGrey;
+    input {
+      margin: 0;
+      padding: 0 8px;
+      border: none;
+      color: $clrDarkGrey;
+      font-size: 3rem;
+      font-weight: 500;
+      outline: none;
+    }
+    md-dropdown-button {
+      box-shadow: none;
+    }
+    .menu-button {
+      margin: 0;
+    }
+  }
+  .entry-extra {
+    line-height: 2.8;
+    padding: 0 8px;
+    border-top: 1px solid $clrLightGrey;
+    color: $clrGrey;
+    font-size: 1.4rem;
+  }
+  .entry-markdown {
+
+    textarea {
+      margin: 0;
+      padding: 0;
+      border: none;
+      font-size: 2rem;
+      outline: none;
+      resize: none;
+    }
+    .entry-markdown-content {
+      padding: 16px 16px 8px;
+    }
+    .markdown-help {
+      cursor: help;
+    }
+  }
+  .entry-preview {
+    border-left: 1px solid $clrLightGrey;
+
+    img {
+      max-width: 100%;
+      margin: auto;
+      display: block;
+    }
+    .entry-preview-content {
+      position: relative;
+      line-height: 1.5em;
+      padding: 16px 16px 8px;
+      font-size: 2rem;
+    }
+    .rendered-markdown {
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 8px;
+      right: 8px;
+      word-break: break-word;
+      overflow: auto;
+      p {
+        margin: 0 0 1.4em 0;
+      }
+    }
+  }
+  .mobile-tabs {
+    display: none;
+    a {
+      text-decoration: none;
+      &.active {
+        color: $clrDarkGrey;
+      }
+    }
+    .separate {
+      padding: 0 10px;
+    }
+  }
+
+  .post-settings {
+    h3 {
+      margin: 36px auto;
+      color: $clrDarkGrey;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    md-toolbar {
+      min-height: 30px;
+    }
+    .md-toolbar-tools {
+      height: 30px;
+      line-height: 30px;
+    }
+    .post-cover-zone {
+      margin: 0 0 36px;
+    }
+  }
+}
+
+@media (max-width: 959px) {
+  .editor {
+    .entry-markdown {
+      padding: 0;
+    }
+    .entry-preview {
+      padding: 0;
+      border: none;
+    }
+    .editor-view-markdown {
+      .entry-preview {
+        display: none;
+      }
+    }
+    .editor-view-preview {
+      .entry-markdown {
+        display: none;
+      }
+    }
+    .desktop-tabs {
+      display: none;
+    }
+    .mobile-tabs {
+      display: block;
+    }
+  }
+}

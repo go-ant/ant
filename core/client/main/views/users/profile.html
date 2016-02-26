@@ -1,0 +1,85 @@
+<div class="page-header">
+  <h2>
+    <md-button class="md-icon-button" hide-gt-md aria-label="Toggle Menu" ng-click="vm.openMenu()">
+      <md-icon>menu</md-icon>
+    </md-button>
+    {{vm.breadcrumb | translate}}
+  </h2>
+</div>
+<div class="panel" ng-if="vm.models.user">
+  <div class="site-cover" ng-style="{'background-image':'url(' + vm.models.user.cover + ')'}">
+    <div class="site-logo">
+      <img ng-src="{{vm.models.user.avatar}}">
+      <div class="uploader" ng-click="vm.showImageUpload($event, 'avatar')"><md-icon>photo</md-icon></div>
+    </div>
+    <div class="cover-edit"><md-icon class="md-20" ng-click="vm.showImageUpload($event, 'cover')">edit</md-icon></div>
+  </div>
+  <md-content class="md-padding">
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="{{'user_profile' | translate}}">
+        <div layout="column">
+          <md-select placeholder="{{'role' | translate}}" ng-model="vm.models.user.roles[0].id" ng-if="::vm.allowUpdateRole()">
+            <md-option value="{{role.id}}" ng-repeat="role in vm.roles">{{role.name}}</md-option>
+          </md-select>
+        </div>
+
+        <md-input-container class="md-block"  ng-if="::vm.isGranted('edit-users')">
+          <label>{{'user_name' | translate}}</label>
+          <input type="text" maxlength="50" md-maxlength="50" ng-model="vm.models.user.name">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>{{'email' | translate}}</label>
+          <input type="email" ng-model="vm.models.user.email">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>{{'location' | translate}}</label>
+          <input type="text" ng-model="vm.models.user.location">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>{{'website' | translate}}</label>
+          <input type="text" ng-model="vm.models.user.website">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>{{'bio' | translate}}</label>
+          <textarea md-maxlength="200" ng-model="vm.models.user.bio"></textarea>
+        </md-input-container>
+
+        <div class="form-action" layout="row" ng-if="vm.allowSave()">
+          <md-button class="md-raised md-primary no-margin" flex-sm flex-md ng-class="{'md-processing': vm.isSaving}" ng-click="vm.save()">
+            {{'save' | translate}}
+            <div class="processer"><i class="spinner-wrap"><i class="circle"></i></i></div>
+          </md-button>
+        </div>
+      </md-tab>
+
+      <md-tab label="{{'password' | translate}}" ng-if="::vm.allowUpdatePassword()">
+        <md-input-container class="md-block" ng-if="::vm.needPassword()">
+          <label>{{'password_old' | translate}}</label>
+          <input type="password" ng-model="vm.password.old">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>{{'password_new' | translate}}</label>
+          <input type="password" ng-model="vm.password.new">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>{{'password_verify' | translate}}</label>
+          <input type="password" ng-model="vm.password.verify">
+        </md-input-container>
+
+        <div class="form-action" layout="row">
+          <md-button class="md-raised md-primary no-margin" flex-sm flex-md ng-class="{'md-processing': vm.isSaving}" ng-click="vm.savePassword()">
+            {{'password_change' | translate}}
+            <div class="processer"><i class="spinner-wrap"><i class="circle"></i></i></div>
+          </md-button>
+        </div>
+      </md-tab>
+
+    </md-tabs>
+  </md-content>
+</div>

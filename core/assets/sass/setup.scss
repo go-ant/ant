@@ -1,0 +1,94 @@
+@import "variable";
+
+.ga-setup {
+  background: url(images/bg.png);
+  background-size: cover;;
+
+  md-icon {
+    color: #aaa;
+  }
+
+  .main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    max-width: 340px;
+    padding-top: 40px;
+    background-color: #fff;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+
+    section {
+      padding: 20px 25px 20px 20px;
+    }
+    .account-avatar {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      padding: 4px;
+      border: 1px solid #ddd;
+      border-radius: 100%;
+      box-sizing: border-box;
+      background-color: #fff;
+      -webkit-transform: translate3d(-50%, 0, 0);
+      transform: translate3d(-50%, 0, 0);
+
+      &:hover {
+        .uploader {
+          opacity: 1;
+        }
+      }
+      .placeholder-img {
+        width: 90px;
+        height: 90px;
+        border-radius: 100%;
+        background-image: url(images/avatar.png);
+        background-position: 50% 50%;
+        background-size: cover;
+      }
+      .uploader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 90px;
+        height: 90px;
+        line-height: 90px;
+        border-radius: 100%;
+        background-color: rgba($clrPrimary, 0.5);
+        text-align: center;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity .5s;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+
+        md-icon {
+          width: 40px;
+          height: 40px;
+          color: #fff;
+          font-size: 40px;
+        }
+      }
+      .avatar-thumb {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 90px;
+        height: 90px;
+        border: none;
+        border-radius: 100%;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+      }
+    }
+    .action {
+      margin-bottom: 10px;
+    }
+    .md-button {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>Sign in - GoAnt</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="application-name" content="GoAnt" />
+  <link rel="stylesheet" href="{% asset "/goant/assets/css/vendor.min.css" goant=true %}" />
+  <link rel="stylesheet" href="{% asset "/goant/assets/css/themes/default.min.css" goant=true %}" />
+  <script src="{% asset "/goant/assets/js/vendor.min.js" goant=true %}"></script>
+  <script src="{% asset "/goant/assets/js/login.min.js" goant=true %}"></script>
+</head>
+<body class="ga-login">
+  <div ng-controller="LoginController as vm">
+    <h2><translate>sign_in</translate></h2>
+    <section>
+      <form>
+        <md-input-container class="md-icon-float md-block" >
+          <label><translate>user_name</translate></label>
+          <md-icon>person</md-icon>
+          <input type="text" ng-model="vm.models.user.name">
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block" >
+          <label><translate>password</translate></label>
+          <md-icon>lock</md-icon>
+          <input type="password" ng-model="vm.models.user.password">
+        </md-input-container>
+        <div class="action">
+          <md-button class="md-raised md-primary no-margin" type="submit" aria-label="sign in" ng-class="{'md-processing': vm.isSaving}" ng-click="vm.login()">
+            <span translate="sign_in"></span>
+            <div class="processer"><i class="spinner-wrap"><i class="circle"></i></i></div>
+          </md-button>
+        </div>
+      </form>
+      <div><a class="md-link md-primary forgotten-link" href="javascript:;"><translate>forgot_password</translate>?</a></div>
+    </section>
+  </div>
+</body>
+</html>

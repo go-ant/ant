@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h2>
+    <md-button class="md-icon-button" hide-gt-md aria-label="Toggle Menu" ng-click="vm.openMenu()">
+      <md-icon>menu</md-icon>
+    </md-button>
+    {{vm.breadcrumb | translate}}
+  </h2>
+  <div class="page-action"></div>
+</div>
+<md-button class="md-fab add-item" ui-sref="roles/add" ng-if="::vm.isGranted('add-roles')"><md-icon>add</md-icon></md-button>
+<div class="panel panel-padding">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th style="width: 130px;;">{{'role_name' | translate}}</th>
+      <th>{{'role_description' | translate}}</th>
+      <th style="width: 40px;"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="no-data" ng-if="::vm.roles.length==0"><td colspan="3">{{'no_data_found' | translate}}</td></tr>
+    <tr class="single-line" ng-repeat="role in vm.roles">
+      <td>
+        <a ui-sref="roles/edit({roleId:role.id})" ng-if="::vm.allowEditRoles">{{::role.name}}</a>
+        <span ng-if="::!vm.allowEditRoles">{{::role.name}}</span>
+      </td>
+      <td>{{::role.description}}</td>
+      <td>
+        <md-button class="md-fab md-mini" aria-label="delete post" ng-click="vm.remove(role.id, role.name)" ng-if="::vm.allowDeleteRoles">
+          <md-icon class="md-20">delete</md-icon>
+        </md-button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
