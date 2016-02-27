@@ -4,7 +4,6 @@ var gulp = require('gulp')
   , sass = require('gulp-sass')
   , htmlmin = require('gulp-htmlmin')
   , minify = require('gulp-minify-css')
-  , jsonminify = require('gulp-jsonminify')
   , rename = require('gulp-rename')
   , replace = require('gulp-replace')
   , clean = require('gulp-clean')
@@ -161,4 +160,6 @@ gulp.task('watch', function() {
   gulp.watch(paths.i18n, ['i18n']);
 });
 
-gulp.task('default', ['copy', 'html-min', 'styles', 'i18n', 'scripts-vendor', 'scripts-setup', 'scripts-login', 'scripts', 'watch']);
+gulp.task('production', ['copy', 'html-min', 'styles', 'i18n', 'scripts-vendor', 'scripts-setup', 'scripts-login', 'scripts']);
+
+gulp.task('default', ['production', 'watch']);

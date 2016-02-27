@@ -1,7 +1,7 @@
 {
   "name": "GoAnt",
   "version": "0.1.0",
-  "description": "Just a blogging platform.",
+  "description": "A blog engine written in Go",
   "author": "GoAnt Foundation",
   "homepage": "http://goant.org/",
   "keywords": [
@@ -25,7 +25,7 @@
     "gulp-angular-templatecache": "^1.7.0",
     "gulp-babel": "^5.1.0",
     "gulp-clean": "latest",
-    "gulp-jsonminify": "latest",
+    "gulp-htmlmin": "latest",
     "gulp-minify-css": "latest",
     "gulp-minify-html": "latest",
     "gulp-native2ascii": "latest",
