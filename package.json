@@ -11,12 +11,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/goant/goant.git"
+    "url": "git://github.com/go-ant/ant.git"
   },
   "licenses": [
     {
       "type": "GPL2.0",
-      "url": "https://github.com/go-ant/ant/master/LICENSE"
+      "url": "https://github.com/go-ant/ant/blob/master/LICENSE"
     }
   ],
   "devDependencies": {
