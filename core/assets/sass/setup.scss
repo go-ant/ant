@@ -1,8 +1,11 @@
 @import "variable";
 
 .ga-setup {
+  widows: 100%;
+  min-height: 100vh;
   background: url(images/bg.png);
-  background-size: cover;;
+  background-size: cover;
+  overflow: hidden;
 
   md-icon {
     color: #aaa;
@@ -16,7 +19,6 @@
     max-width: 340px;
     padding-top: 40px;
     background-color: #fff;
-    -webkit-transform: translate3d(-50%, -50%, 0);
     transform: translate3d(-50%, -50%, 0);
 
     section {
@@ -89,6 +91,16 @@
     }
     .md-button {
       width: 100%;
+    }
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .ga-setup {
+    .main {
+      position: static;
+      margin: 90px auto 30px;
+      transform: translate3d(0, 0, 0);
     }
   }
 }
