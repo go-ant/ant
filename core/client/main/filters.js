@@ -5,7 +5,7 @@ angular
 
 function filterFromNow() {
   return function(date, defValue) {
-    return Date.parse(date) < 0 ? defValue: moment(date).fromNow();
+    return Date.parse(date) <= 1136214245000 ? defValue: moment(date).fromNow();
   }
 }
 

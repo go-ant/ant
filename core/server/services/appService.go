@@ -6,16 +6,18 @@ import (
 	"github.com/go-ant/ant/core/server/modules/middleware"
 	"github.com/go-ant/ant/core/server/modules/utils"
 	"github.com/rocwong/neko"
+	"time"
 )
 
 func AppSetup(ctx *neko.Context) {
 	dataJson := ctx.Params.Json()
 	appTitle := dataJson.GetString("title")
 	user := models.User{
-		Name:     dataJson.GetString("name"),
-		Password: dataJson.GetString("password"),
-		Avatar:   dataJson.GetString("avatar"),
-		Language: dataJson.GetString("language"),
+		Name:      dataJson.GetString("name"),
+		Password:  dataJson.GetString("password"),
+		Avatar:    dataJson.GetString("avatar"),
+		Language:  dataJson.GetString("language"),
+		LastLogin: utils.ToTime(time.RFC1123),
 	}
 	if utils.IsEmpty(user.Name) {
 		ctx.Json(models.RestApi{Error: models.ApiMsg.ErrUserNameCanNotBeEmpty})

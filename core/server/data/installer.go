@@ -10,6 +10,7 @@ import (
 	"io/ioutil"
 	"sort"
 	"strings"
+	"time"
 )
 
 const (
@@ -112,12 +113,15 @@ func ImportPosts(user *models.User) {
 
 	for _, k := range postKeys {
 		post := &models.Post{
-			Title:    dataPosts[k].Title,
-			Slug:     dataPosts[k].Slug,
-			Markdown: dataPosts[k].Markdown,
-			AuthorId: user.Id,
-			Language: user.Language,
-			Status:   models.PostStatusPublished,
+			Title:       dataPosts[k].Title,
+			Slug:        dataPosts[k].Slug,
+			Markdown:    dataPosts[k].Markdown,
+			AuthorId:    user.Id,
+			Language:    user.Language,
+			Status:      models.PostStatusPublished,
+			PublishedAt: time.Now(),
+			PublishedBy: user.Id,
+			CreatedBy:   user.Id,
 		}
 		models.CreatePost(post, nil)
 	}
