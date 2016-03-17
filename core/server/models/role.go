@@ -54,7 +54,7 @@ func CreateRole(role *Role, opts *Options) ApiErr {
 	}
 
 	for _, permission := range opts.Permissions {
-		tx.Exec("INSERT INTO `Permissions_Roles` (`permission_id`, `role_id`) VALUES (?, ?)", permission.Id, role.Id)
+		tx.Exec("INSERT INTO `permissions_roles` (`permission_id`, `role_id`) VALUES (?, ?)", permission.Id, role.Id)
 	}
 
 	tx.Commit()
@@ -98,9 +98,9 @@ func EditRole(role *Role, opts *Options) ApiErr {
 		return UnknowError(err.Error())
 	}
 
-	tx.Exec("DELETE FROM `Permissions_Roles` WHERE `role_id` = ?", role.Id)
+	tx.Exec("DELETE FROM `permissions_roles` WHERE `role_id` = ?", role.Id)
 	for _, permission := range opts.Permissions {
-		tx.Exec("INSERT INTO `Permissions_Roles` (`permission_id`, `role_id`) VALUES (?, ?)", permission.Id, role.Id)
+		tx.Exec("INSERT INTO `permissions_roles` (`permission_id`, `role_id`) VALUES (?, ?)", permission.Id, role.Id)
 	}
 
 	tx.Commit()
@@ -117,7 +117,7 @@ func EditRole(role *Role, opts *Options) ApiErr {
 func DeleteRole(id uint32, opts *Options) ApiErr {
 	// Note: A Role with users cannot perform delete operation.
 	count := 0
-	if db.Table("Roles_Users").Where("role_id = ?", id).Count(&count); count > 0 {
+	if db.Table("roles_users").Where("role_id = ?", id).Count(&count); count > 0 {
 		return ApiMsg.ErrRoleHaveUsersCanNotBeDeleted
 	}
 

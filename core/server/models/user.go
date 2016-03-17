@@ -116,6 +116,7 @@ func CreateUser(u *User, opts *Options) ApiErr {
 	u.Slug = slug.Make(u.Name)
 	u.Salt = utils.GetRandomString(10)
 	u.Status = "active"
+	u.LastLogin = utils.ToTime(time.RFC1123)
 	u.EncodePassword()
 
 	tx := db.Begin()
@@ -124,7 +125,7 @@ func CreateUser(u *User, opts *Options) ApiErr {
 		return UnknowError(err.Error())
 	}
 
-	tx.Exec("INSERT INTO `Roles_Users` (`role_id`, `user_id`) VALUES (?, ?)", targetRole.Id, u.Id)
+	tx.Exec("INSERT INTO `roles_users` (`role_id`, `user_id`) VALUES (?, ?)", targetRole.Id, u.Id)
 
 	tx.Commit()
 
@@ -182,7 +183,7 @@ func EditUser(u *User, opts *Options) ApiErr {
 		tx.Rollback()
 		return UnknowError(err.Error())
 	}
-	tx.Exec("UPDATE `Roles_Users` SET `role_id` = ? WHERE (`user_id` = ?)", targetRole.Id, u.Id)
+	tx.Exec("UPDATE `roles_users` SET `role_id` = ? WHERE (`user_id` = ?)", targetRole.Id, u.Id)
 	tx.Commit()
 
 	return ApiMsg.Saved
