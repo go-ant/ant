@@ -49,12 +49,12 @@
     <h3 class="sub-header">{{'code_injection' | translate}}</h3>
     <md-input-container class="md-block">
       <label>{{'code_injection_header' | translate}}</label>
-      <textarea maxlength="200" md-maxlength="200" ng-model="vm.models.setting.ant_head"></textarea>
+      <textarea maxlength="200" ng-model="vm.models.setting.ant_head"></textarea>
       <div class="hint" ng-bind-html="'hint.code_inject_into_head'|translate:'{code: \'{% ant_head %}\'}'"></div>
     </md-input-container>
     <md-input-container class="md-block">
       <label>{{'code_injection_footer' | translate}}</label>
-      <textarea maxlength="200" md-maxlength="200" ng-model="vm.models.setting.ant_foot"></textarea>
+      <textarea maxlength="200" ng-model="vm.models.setting.ant_foot"></textarea>
       <div class="hint" ng-bind-html="'hint.code_inject_into_foot'|translate:'{code: \'{% ant_foot %}\'}'"></div>
     </md-input-container>
     <div class="form-action" layout="row">

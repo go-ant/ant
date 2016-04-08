@@ -45,7 +45,7 @@ func (c *JsonSetting) NavigationSerialize() string {
 type Setting struct {
 	Id        uint32    `gorm:"primary_key"`
 	Key       string    `sql:"not null;type:varchar(50);"`
-	Value     string    `sql:"type:varchar(150)"`
+	Value     string    `sql:"type:text"`
 	Type      string    `sql:"type:varchar(20);"`
 	CreatedAt time.Time `sql:"not null;type:datetime;"`
 	CreatedBy uint32    `sql:"not null;type:bigint unsigned;"`
