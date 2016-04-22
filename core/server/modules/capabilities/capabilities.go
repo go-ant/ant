@@ -23,3 +23,7 @@ func SetRole(name string, perms []string) {
 func IsGranted(name, permission string, assert rbac.AssertionFunc) bool {
 	return allRole.IsGranted(name, permission, assert)
 }
+
+func RemoveAll() {
+	allRole = rbac.New()
+}

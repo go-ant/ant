@@ -2,13 +2,15 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/go-ant/ant/core/server/modules/cache"
-	"github.com/go-ant/ant/core/server/modules/utils"
 	"strings"
 	"time"
+
+	"github.com/go-ant/ant/core/server/modules/cache"
+	"github.com/go-ant/ant/core/server/modules/utils"
 )
 
 type JsonSetting struct {
+	AppUrl       string        `json:"app_url`
 	Title        string        `json:"title"`
 	Description  string        `json:"description"`
 	Logo         string        `json:"logo"`
@@ -108,6 +110,8 @@ func GetSetting(opts *Options) (*JsonSetting, ApiErr) {
 		switch strings.ToLower(n.Key) {
 		case "version":
 			jsonSetting.Version = n.Value
+		case "app_url":
+			jsonSetting.AppUrl = n.Value
 		case "title":
 			jsonSetting.Title = n.Value
 		case "description":
@@ -154,7 +158,7 @@ func GetSetting(opts *Options) (*JsonSetting, ApiErr) {
 // GetAppSetting get setting from cache
 func GetAppSetting() *JsonSetting {
 	appSetting, found := cache.Get(CacheKeyAppSettings)
-	if !found {
+	if !found && HasEngine {
 		opts := &Options{}
 		appSetting, _ := GetSetting(opts)
 		if appSetting != nil {

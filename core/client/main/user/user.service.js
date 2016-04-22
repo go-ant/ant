@@ -5,7 +5,7 @@ angular
 userService.$inject = ['$http', 'commService'];
 function userService($http, commService) {
   let service = {
-    setup: setup,
+    install: install,
     login: login,
     list: list,
     get: get,
@@ -16,8 +16,8 @@ function userService($http, commService) {
   return service;
 
 
-  function setup(app) {
-    return $http.post('../api/setup', app)
+  function install(app) {
+    return $http.post('../api/install', app)
       .then(commService.ajaxContentCallBack);
   }
 

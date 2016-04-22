@@ -3,17 +3,17 @@ angular.module('app', [
     'flow',
     'pascalprecht.translate'
   ])
-  .controller('SetupController', setupCtrl);
+  .controller('InstallController', installCtrl);
 
 
-setupCtrl.$inject = ['$scope', '$mdToast', '$translate', 'commService', 'userService'];
-function setupCtrl($scope, $mdToast, $translate, commService, userService) {
+installCtrl.$inject = ['$scope', '$mdToast', '$translate', 'commService', 'userService'];
+function installCtrl($scope, $mdToast, $translate, commService, userService) {
   let vm = this
    , toastDelay = 5000;
 
   $scope.showToast = showToast;
   vm.changeLang = changeLang;
-  vm.setup = setup;
+  vm.install = install;
   vm.isSaving = false;
   vm.models = {};
   vm.models.languages = commService.supportedLang;
@@ -67,7 +67,7 @@ function setupCtrl($scope, $mdToast, $translate, commService, userService) {
     $translate.use(vm.models.app.language);
   }
 
-  function setup() {
+  function install() {
     if (vm.models.app.name.length == 0) {
       $scope.showToast('', { code: -1, message: $translate.instant('msg.user_name_not_be_empty')});
       return false;
@@ -86,7 +86,7 @@ function setupCtrl($scope, $mdToast, $translate, commService, userService) {
     }
 
     vm.isSaving = true;
-    userService.setup(vm.models.app)
+    userService.install(vm.models.app)
       .then(function(json) {
         vm.isSaving = false;
         $scope.showToast(json.error.message, json.error, false);

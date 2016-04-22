@@ -3,32 +3,65 @@ package data
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/ahmetalpbalkan/go-linq"
-	"github.com/go-ant/ant/core/server/models"
-	"github.com/go-ant/ant/core/server/modules/setting"
-	"github.com/go-ant/ant/core/server/modules/utils"
 	"io/ioutil"
 	"sort"
 	"strings"
 	"time"
+
+	"github.com/ahmetalpbalkan/go-linq"
+
+	"github.com/go-ant/ant/core/server/models"
+	"github.com/go-ant/ant/core/server/modules/capabilities"
+	"github.com/go-ant/ant/core/server/modules/setting"
+	"github.com/go-ant/ant/core/server/modules/utils"
 )
 
 const (
-	permissions_json_path  = "core/server/data/fixtures/permissions.json"
-	roles_json_path        = "core/server/data/fixtures/roles.json"
-	posts_json_path        = "core/server/data/fixtures/posts.json"
-	app_settings_json_path = "core/server/data/fixtures/settings.json"
+	permissions_json_path = "core/server/data/fixtures/permissions.json"
+	roles_json_path       = "core/server/data/fixtures/roles.json"
+	posts_json_path       = "core/server/data/fixtures/posts.json"
 )
+
+// GlobalInit initialize global configuration
+func GlobalInit() {
+	setting.NewContext()
+
+	if setting.InstallLock {
+		if !models.HasEngine {
+			if err := models.NewEngine(); err != nil {
+
+			}
+		}
+		// cache all roles permission
+		capabilities.RemoveAll()
+		roles, _ := models.GetRoles(nil)
+		for _, role := range roles {
+			role.GetPermissions()
+			permissionsToAdd := make([]string, 0, len(role.Permissions))
+			for _, perm := range role.Permissions {
+				permissionsToAdd = append(permissionsToAdd, perm.Slug)
+			}
+			capabilities.SetRole(role.Slug, permissionsToAdd)
+		}
+	}
+
+}
 
 // DoImport import base data
 func DoImport() {
 	dataPermissons := GetPermissions()
 	dataRoles := GetRoles()
 
-	defNav := models.Navigation{Label: "Home", Url: setting.Host.Path}
-	strNav, _ := json.Marshal(defNav)
+	appUrl := "/"
+	if !utils.IsEmpty(setting.Host.Path) {
+		appUrl = setting.Host.Path
+	}
+	strNav, _ := json.Marshal(models.Navigation{Label: "Home", Url: appUrl})
+
+
 	// import app settings
 	appSettings := make([]*models.Setting, 0)
+	appSettings = append(appSettings, &models.Setting{Key: "app_url", Value: appUrl, Type: "blog", CreatedBy: 1})
 	appSettings = append(appSettings, &models.Setting{Key: "title", Value: "GoAnt", Type: "blog", CreatedBy: 1})
 	appSettings = append(appSettings, &models.Setting{Key: "description", Value: "A blog engine written in Go", Type: "blog", CreatedBy: 1})
 	appSettings = append(appSettings, &models.Setting{Key: "logo", Value: "", Type: "blog", CreatedBy: 1})

@@ -340,6 +340,10 @@ msgstr "已保存"
 msgid "msg.deleted"
 msgstr "已删除"
 
+#. Database Initialization Failed
+msgid "msg.db_initialization_failed"
+msgstr "数据库初始化失败"
+
 #. Need To Sign In
 msgid "msg.need_to_sign_in"
 msgstr "请先登录"

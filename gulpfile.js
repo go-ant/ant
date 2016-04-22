@@ -29,8 +29,8 @@ var paths = {
     'core/client/app.translate.js',
     'core/client/main/**/**.js'
   ],
-  scriptsSetup: [
-    'core/client/setup/app.js',
+  scriptsInstall: [
+    'core/client/install/app.js',
     'core/client/common.js',
     'core/client/app.translate.js',
     'core/client/main/user/user.service.js'
@@ -53,10 +53,10 @@ var paths = {
 };
 
 var optsUglify = {
-  compress: false,
+  compress: true,
   output: {
     ascii_only: true,
-    beautify: true
+    beautify: false
   }
 };
 
@@ -96,10 +96,10 @@ gulp.task('scripts-vendor', function() {
 
 });
 
-gulp.task('scripts-setup', function() {
-  gulp.src(paths.scriptsSetup)
+gulp.task('scripts-install', function() {
+  gulp.src(paths.scriptsInstall)
     .pipe(babel())
-    .pipe(uglify('setup.min.js', optsUglify))
+    .pipe(uglify('install.min.js', optsUglify))
     .pipe(gulp.dest('core/built/assets/js'));
 });
 
@@ -153,13 +153,13 @@ gulp.task('watch', function() {
   gulp.watch(paths.html, ['html-min']);
   gulp.watch(paths.styles, ['styles']);
   gulp.watch(paths.vendor, ['scripts-vendor']);
-  gulp.watch(paths.scriptsSetup, ['scripts-setup']);
+  gulp.watch(paths.scriptsInstall, ['scripts-install']);
   gulp.watch(paths.scriptsLogin, ['scripts-login']);
   gulp.watch(paths.scriptsMain, ['scripts']);
   gulp.watch(paths.templates, ['scripts']);
   gulp.watch(paths.i18n, ['i18n']);
 });
 
-gulp.task('production', ['copy', 'html-min', 'styles', 'i18n', 'scripts-vendor', 'scripts-setup', 'scripts-login', 'scripts']);
+gulp.task('production', ['copy', 'html-min', 'styles', 'i18n', 'scripts-vendor', 'scripts-install', 'scripts-login', 'scripts']);
 
 gulp.task('default', ['production', 'watch']);

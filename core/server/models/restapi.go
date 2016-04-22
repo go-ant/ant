@@ -21,10 +21,11 @@ type apiMsg struct {
 	Saved   ApiErr
 	Deleted ApiErr
 
-	NeedToSignIn ApiErr
-	NoPermission ApiErr
-	SaveFail     ApiErr
-	LoadFail     ApiErr
+	DatabaseFailed ApiErr
+	NeedToSignIn   ApiErr
+	NoPermission   ApiErr
+	SaveFail       ApiErr
+	LoadFail       ApiErr
 
 	ErrRoleNameCanNotBeEmpty        ApiErr
 	ErrRoleNameTooLong              ApiErr
@@ -66,10 +67,11 @@ var ApiMsg = apiMsg{
 	Saved:   ApiErr{Code: 0, Message: "msg.saved"},
 	Deleted: ApiErr{Code: 0, Message: "msg.deleted"},
 
-	NeedToSignIn: ApiErr{Code: 1, Message: "msg.need_to_sign_in"},
-	NoPermission: ApiErr{Code: 9, Message: "msg.no_permission"},
-	SaveFail:     ApiErr{Code: 10, Message: "msg.save_fail"},
-	LoadFail:     ApiErr{Code: 10, Message: "msg.load_fail"},
+	DatabaseFailed: ApiErr{Code: 1, Message: "msg.db_initialization_failed"},
+	NeedToSignIn:   ApiErr{Code: 2, Message: "msg.need_to_sign_in"},
+	NoPermission:   ApiErr{Code: 9, Message: "msg.no_permission"},
+	SaveFail:       ApiErr{Code: 10, Message: "msg.save_fail"},
+	LoadFail:       ApiErr{Code: 10, Message: "msg.load_fail"},
 
 	ErrRoleNameCanNotBeEmpty:        ApiErr{Code: 101, Message: "msg.role_name_not_be_empty"},
 	ErrRoleNameTooLong:              ApiErr{Code: 102, Message: "msg.role_name_too_long"},

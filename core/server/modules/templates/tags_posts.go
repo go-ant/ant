@@ -9,12 +9,14 @@ package templates
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/go-ant/ant/core/server/models"
-	"github.com/go-ant/ant/core/server/modules/utils"
-	"gopkg.in/flosch/pongo2.v3"
 	"math"
 	"strings"
 	"time"
+
+	"gopkg.in/flosch/pongo2.v3"
+
+	"github.com/go-ant/ant/core/server/models"
+	"github.com/go-ant/ant/core/server/modules/utils"
 )
 
 type tagPostsNode struct {
@@ -48,7 +50,6 @@ func (node *tagPostsNode) Execute(ctx *pongo2.ExecutionContext, buffer *bytes.Bu
 	if node.Parms.Limit == 0 {
 		node.Opts.Limit = models.GetAppSetting().PostsPerPage
 	}
-
 
 	page := &page{}
 	list, recordCount, errApi := models.GetPosts(node.Opts)

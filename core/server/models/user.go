@@ -3,13 +3,14 @@ package models
 import (
 	"crypto/sha256"
 	"fmt"
+	"time"
+	"unicode/utf8"
+
 	"github.com/go-ant/ant/core/server/modules/capabilities"
 	"github.com/go-ant/ant/core/server/modules/capabilities/rbac"
 	"github.com/go-ant/ant/core/server/modules/setting"
 	"github.com/go-ant/ant/core/server/modules/utils"
 	"github.com/go-ant/ant/core/server/modules/utils/slug"
-	"time"
-	"unicode/utf8"
 )
 
 type User struct {

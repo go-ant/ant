@@ -1,10 +1,11 @@
 package models
 
 import (
-	"github.com/go-ant/ant/core/server/modules/capabilities"
-	"github.com/go-ant/ant/core/server/modules/utils/slug"
 	"time"
 	"unicode/utf8"
+
+	"github.com/go-ant/ant/core/server/modules/capabilities"
+	"github.com/go-ant/ant/core/server/modules/utils/slug"
 )
 
 type Role struct {

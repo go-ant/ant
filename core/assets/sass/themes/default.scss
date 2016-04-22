@@ -231,19 +231,6 @@ md-toolbar.top-nav  {
     position: relative;
     background: $bgSideNav;
   }
-  .logo {
-    color: #fff;
-    a {
-      width: 150px;
-      height: 100%;
-      line-height: 200%;
-      padding-left: 45px;
-      background: url(../images/logo.png) 0 50% no-repeat;
-      background-size: auto 60%;
-      font-size: 3rem;
-      display: block;
-    }
-  }
 }
 menu-toggle {
   border-bottom: 1px solid darken($bgSideNav, 5%);

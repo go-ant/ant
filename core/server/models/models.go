@@ -2,34 +2,31 @@ package models
 
 import (
 	"fmt"
-	"github.com/go-ant/ant/core/server/modules/setting"
-	"github.com/go-ant/ant/core/server/modules/startup"
-	"github.com/go-ant/ant/core/server/modules/utils"
+	"strings"
+
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
 	_ "github.com/mattn/go-sqlite3"
-	"strings"
+
+	"github.com/go-ant/ant/core/server/modules/setting"
+	"github.com/go-ant/ant/core/server/modules/utils"
 )
 
 const APP_VERSION = "0.1.0"
 
-var db gorm.DB
+var (
+	db gorm.DB
 
-func init() {
-	startup.Register(func() {
-		if err := newEngine(); err == nil {
-			db.LogMode(true)
-		}
-	})
-}
+	HasEngine bool
+)
 
-func newEngine() (err error) {
+func NewEngine() (err error) {
 	err = getEngine()
 	if err != nil {
-		return fmt.Errorf("connect to database: %v", err)
+		return fmt.Errorf("Fail to initialize GORM engine: %v", err)
 	}
-
+	HasEngine = true
 	return nil
 }
 

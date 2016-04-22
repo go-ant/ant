@@ -1,14 +1,16 @@
 package models
 
 import (
-	"github.com/go-ant/ant/core/server/modules/setting"
-	"github.com/go-ant/ant/core/server/modules/utils"
-	"github.com/go-ant/ant/core/server/modules/utils/slug"
-	"github.com/microcosm-cc/bluemonday"
-	"github.com/russross/blackfriday"
 	"path"
 	"time"
 	"unicode/utf8"
+
+	"github.com/microcosm-cc/bluemonday"
+	"github.com/russross/blackfriday"
+
+	"github.com/go-ant/ant/core/server/modules/setting"
+	"github.com/go-ant/ant/core/server/modules/utils"
+	"github.com/go-ant/ant/core/server/modules/utils/slug"
 )
 
 type Post struct {

@@ -1,9 +1,9 @@
 package routes
 
 import (
-	"github.com/go-ant/ant/core/server/modules/middleware"
-	"github.com/go-ant/ant/core/server/services"
 	"github.com/rocwong/neko"
+
+	"github.com/go-ant/ant/core/server/services"
 )
 
 func servicesRoutes(app *neko.Engine) {
@@ -60,10 +60,10 @@ func servicesRoutes(app *neko.Engine) {
 
 			router.GET("/app", services.InitialApp)
 
-		}, middleware.RequireLogin(true))
+		}, reqSignIn)
 
-		router.POST("/signin", services.UserLogin)
-		router.POST("/setup", services.AppSetup)
+		router.POST("/signin", reqSignOut, services.UserLogin)
+		router.POST("/install", services.AppInstall)
 
 	})
 

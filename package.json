@@ -27,7 +27,6 @@
     "gulp-clean": "latest",
     "gulp-htmlmin": "latest",
     "gulp-minify-css": "latest",
-    "gulp-minify-html": "latest",
     "gulp-native2ascii": "latest",
     "gulp-po2json-angular-translate": "0.0.1",
     "gulp-rename": "latest",

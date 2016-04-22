@@ -2,17 +2,28 @@ package setting
 
 import (
 	"fmt"
-	"strconv"
+	"path"
 	"strings"
+
+	"gopkg.in/ini.v1"
+
+	"github.com/go-ant/ant/core/server/modules/utils"
 )
 
 const (
-	CONFIG_PATH = "config/app.ini"
+	CONFIG_FILE = "config/app.ini"
+	CUSTOM_PATH = "custom/"
 )
 
 var (
-	EnableGzip bool
-	Installed  bool
+	EnableGzip  bool
+	InstallLock bool
+
+	Session struct {
+		Name  string
+		Key   string
+		Store string
+	}
 
 	Host struct {
 		Path string
@@ -29,20 +40,37 @@ var (
 	}
 
 	DbCfg struct {
-		Type, Host, Name, User, Passwd, SSLMode string
+		Type    string
+		Host    string
+		Name    string
+		User    string
+		Passwd  string
+		SSLMode string
+		Path    string
 	}
+
+	// Global setting objects
+	INSTALLER_URL = path.Join(Host.Path, "/goant/install")
+	CustomConf    string
 )
 
-func init() {
-	Config, err := loadConfig(CONFIG_PATH)
-	if err != nil || Config == nil {
-		panic(fmt.Errorf("Err: Failed to load `config/app.ini`"))
+func NewContext() {
+	Cfg, err := ini.Load(CONFIG_FILE)
+	if err != nil {
+		panic(fmt.Errorf("Err: Failed to load `%s`: %v", CONFIG_FILE, err.Error()))
 	}
 
-	EnableGzip, _ = strconv.ParseBool(Config.StringDefault("enable_gzip", "true"))
-	Host.Path = Config.StringDefault("host.path", "/")
-	Host.Addr = Config.StringDefault("host.addr", "")
-	Host.Port = Config.StringDefault("host.port", "2015")
+	if len(CustomConf) == 0 {
+		CustomConf = CUSTOM_PATH + CONFIG_FILE
+	}
+	if utils.IsFile(CustomConf) {
+		Cfg.Append(CustomConf)
+	}
+
+	EnableGzip = Cfg.Section("").Key("enable_gzip").MustBool(false)
+	Host.Path = Cfg.Section("").Key("host.path").MustString("/")
+	Host.Addr = Cfg.Section("").Key("host.addr").MustString("/")
+	Host.Port = Cfg.Section("").Key("host.port").MustString("2015")
 
 	if !strings.HasPrefix(Host.Path, "/") {
 		Host.Path = "/" + Host.Path
@@ -50,12 +78,18 @@ func init() {
 	Host.Path = strings.TrimSuffix(Host.Path, "/")
 
 	// API settings
-	Config.Section("api")
-	API.UploadFolder = Config.StringDefault("api.upload_folder", "./content/upload")
-	API.FilesPath = Config.StringDefault("api.files_path", "/upload")
-	API.UploadMaxSize = Config.IntDefault("api.upload_max_size", 10<<20)
-	API.UploadExtensions = Config.ArrayDefault("api.upload_extensions", []string{".jpg", ".jpeg", ".gif", ".png", ".svg"})
-	API.UploadContentTypes = Config.ArrayDefault("api.upload_content_types", []string{"image/jpeg", "image/png", "image/gif", "image/svg+xml"})
+	sec := Cfg.Section("api")
+	API.UploadFolder = sec.Key("api.upload_folder").MustString("./content/upload")
+	API.FilesPath = sec.Key("api.files_path").MustString("/upload")
+	API.UploadMaxSize = sec.Key("api.upload_max_size").MustInt(10 << 20)
+	API.UploadExtensions = sec.Key("api.upload_extensions").Strings("|")
+	API.UploadContentTypes = sec.Key("api.upload_content_types").Strings("|")
+	if len(API.UploadExtensions) == 0 {
+		API.UploadExtensions = []string{".jpg", ".jpeg", ".gif", ".png", ".svg"}
+	}
+	if len(API.UploadContentTypes) == 0 {
+		API.UploadContentTypes = []string{"image/jpeg", "image/png", "image/gif", "image/svg+xml"}
+	}
 
 	API.UploadFolder = strings.TrimSuffix(API.UploadFolder, "/")
 	if !strings.HasPrefix(API.UploadFolder, "./") {
@@ -72,12 +106,21 @@ func init() {
 	}
 
 	// database settings
-	Config.Section("database")
-	DbCfg.Type = "mysql"
-	DbCfg.Host = Config.StringDefault("db.host", "")
-	DbCfg.Name = Config.StringDefault("db.name", "")
-	DbCfg.User = Config.StringDefault("db.user", "")
-	DbCfg.Passwd = Config.StringDefault("db.passwd", "")
-	DbCfg.SSLMode = Config.StringDefault("db.ssl", "disable")
+	sec = Cfg.Section("database")
+	DbCfg.Type = sec.Key("db.type").In("mysql", []string{"mysql"})
+	DbCfg.Host = sec.Key("db.host").Value()
+	DbCfg.Name = sec.Key("db.name").Value()
+	DbCfg.User = sec.Key("db.user").Value()
+	DbCfg.Passwd = sec.Key("db.passwd").Value()
+	DbCfg.SSLMode = sec.Key("db.ssl").MustString("disable")
+	DbCfg.Path = sec.Key("db.path").MustString("data/goant.db")
 
+	// session settings
+	sec = Cfg.Section("session")
+	Session.Name = sec.Key("name").MustString("goant")
+	Session.Key = sec.Key("key").MustString("goant")
+	Session.Store = sec.Key("store").In("cookie", []string{"cookie"})
+
+	sec = Cfg.Section("security")
+	InstallLock = sec.Key("install_lock").MustBool(false)
 }

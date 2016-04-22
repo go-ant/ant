@@ -1,16 +1,24 @@
 package routes
 
 import (
-	"github.com/go-ant/ant/core/server/modules/setting"
-	"github.com/rocwong/neko"
 	"path"
+
+	"github.com/rocwong/neko"
+
+	"github.com/go-ant/ant/core/server/modules/setting"
 )
 
-func pageUrl(url string) string {
-	return path.Join(setting.Host.Path, url)
-}
+var (
+	ignSignIn  = auth(&authOptions{})
+	reqSignIn  = auth(&authOptions{SignInRequired: true})
+	reqSignOut = auth(&authOptions{SignOutRequired: true})
+)
 
 func Create(app *neko.Engine) {
 	frontendRoutes(app)
 	servicesRoutes(app)
+}
+
+func pageUrl(url string) string {
+	return path.Join(setting.Host.Path, url)
 }

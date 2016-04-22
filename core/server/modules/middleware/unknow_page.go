@@ -1,8 +1,9 @@
 package middleware
 
 import (
-	"github.com/go-ant/ant/core/server/modules/setting"
 	"github.com/rocwong/neko"
+
+	"github.com/go-ant/ant/core/server/modules/setting"
 )
 
 func UnknowPage() neko.HandlerFunc {

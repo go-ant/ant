@@ -1,10 +1,11 @@
 package middleware
 
 import (
-	"github.com/go-ant/ant/core/server/models"
-	"github.com/go-ant/ant/core/server/modules/setting"
-	"github.com/rocwong/neko"
 	"path"
+
+	"github.com/rocwong/neko"
+
+	"github.com/go-ant/ant/core/server/models"
 )
 
 const (
@@ -12,7 +13,7 @@ const (
 )
 
 var (
-	Context    *AssistantContext
+	Context    *ContextHelper
 	fileFilter map[string]bool = map[string]bool{
 		".css":  true,
 		".js":   true,
@@ -29,32 +30,21 @@ var (
 	}
 )
 
-type AssistantContext struct {
-	User *models.User
+type ContextHelper struct {
+	User     *models.User
+	IsSigned bool
 }
 
 // Contexter initializes a classic context for a request.
 func Contexter() neko.HandlerFunc {
 	return func(ctx *neko.Context) {
-		if !fileFilter[path.Ext(ctx.Req.URL.Path)] {
-			Context = new(AssistantContext)
+		if !fileFilter[path.Ext(ctx.Req.URL.Path)] && models.HasEngine {
+			Context = new(ContextHelper)
 			uid := ctx.Session.Get(SESSION_USER_ID)
 			if uid != nil {
 				Context.User, _ = models.GetUserById(uid.(uint32), nil)
+				Context.IsSigned = true
 			}
-		}
-	}
-}
-
-func RequireLogin(isApi bool) neko.HandlerFunc {
-	return func(ctx *neko.Context) {
-		if Context.User == nil {
-			if isApi {
-				ctx.Json(models.RestApi{Error: models.ApiMsg.NeedToSignIn})
-			} else {
-				ctx.Redirect(setting.Host.Path + "/goant/login")
-			}
-			ctx.Abort()
 		}
 	}
 }

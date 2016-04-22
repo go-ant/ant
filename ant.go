@@ -1,6 +1,15 @@
 package main
 
 import (
+	"fmt"
+	"path"
+
+	"github.com/neko-contrib/gzip"
+	"github.com/neko-contrib/pongo2"
+	"github.com/neko-contrib/sessions"
+	"github.com/rocwong/neko"
+
+	"github.com/go-ant/ant/core/server/data"
 	"github.com/go-ant/ant/core/server/modules/cache"
 	_ "github.com/go-ant/ant/core/server/modules/capabilities"
 	"github.com/go-ant/ant/core/server/modules/middleware"
@@ -8,16 +17,11 @@ import (
 	"github.com/go-ant/ant/core/server/modules/startup"
 	_ "github.com/go-ant/ant/core/server/modules/templates"
 	"github.com/go-ant/ant/core/server/routes"
-	"github.com/neko-contrib/gzip"
-	"github.com/neko-contrib/pongo2"
-	"github.com/neko-contrib/sessions"
-	"github.com/rocwong/neko"
-	"path"
 )
 
 func main() {
 	app := neko.Classic("GoAnt")
-
+	data.GlobalInit()
 	if setting.EnableGzip {
 		app.Use(gzip.Gzip(gzip.DefaultCompression))
 	}
@@ -25,7 +29,6 @@ func main() {
 	app.Static(path.Join(setting.Host.Path, "/goant/assets"), "core/built/assets")
 	app.Static(path.Join(setting.Host.Path, setting.API.FilesPath), setting.API.UploadFolder)
 
-	app.Use(middleware.Installer())
 	app.Use(pongo2.Renderer(
 		pongo2.Options{
 			Extension: ".html",
@@ -35,9 +38,9 @@ func main() {
 			},
 		}),
 	)
-	app.Use(sessions.Sessions("goant", sessions.NewCookieStore([]byte("goant"))))
-	app.Use(middleware.Contexter())
+	app.Use(sessions.Sessions(setting.Session.Name, sessions.NewCookieStore([]byte(setting.Session.Key))))
 	app.Use(middleware.UnknowPage())
+	app.Use(middleware.Contexter())
 
 	cache.NewCache(cache.Options{Store: cache.MemoryStore})
 
@@ -45,7 +48,6 @@ func main() {
 	routes.Create(app)
 
 	startup.Run()
-
-	app.Run(setting.Host.Addr + ":" + setting.Host.Port)
+	app.Run(fmt.Sprintf("%s:%s", setting.Host.Addr, setting.Host.Port))
 
 }

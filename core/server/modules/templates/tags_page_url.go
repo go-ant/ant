@@ -7,9 +7,11 @@ package templates
 
 import (
 	"bytes"
-	"github.com/go-ant/ant/core/server/modules/setting"
-	"gopkg.in/flosch/pongo2.v3"
 	"path"
+
+	"gopkg.in/flosch/pongo2.v3"
+
+	"github.com/go-ant/ant/core/server/modules/setting"
 )
 
 type tagPageUrlNode struct {

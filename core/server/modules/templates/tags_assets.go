@@ -8,10 +8,12 @@ package templates
 
 import (
 	"bytes"
+	"path"
+
+	"gopkg.in/flosch/pongo2.v3"
+
 	"github.com/go-ant/ant/core/server/models"
 	"github.com/go-ant/ant/core/server/modules/setting"
-	"gopkg.in/flosch/pongo2.v3"
-	"path"
 )
 
 type tagAssetNode struct {
@@ -28,7 +30,6 @@ func tagAssetParser(doc *pongo2.Parser, start *pongo2.Token, arguments *pongo2.P
 
 	formatToken := arguments.MatchType(pongo2.TokenString)
 	if formatToken != nil {
-		appSetting := models.GetAppSetting()
 		node.filePath = setting.Host.Path + "/assets/"
 		node.filePath = path.Join(node.filePath, formatToken.Val)
 
@@ -45,10 +46,8 @@ func tagAssetParser(doc *pongo2.Parser, start *pongo2.Token, arguments *pongo2.P
 		}
 		if path.Ext(node.filePath) == "" {
 			node.filePath += "/"
-		} else if appSetting != nil {
-			node.filePath = node.filePath + "?v=" + appSetting.Version
 		} else {
-			node.filePath = node.filePath
+			node.filePath += "?v=" + models.APP_VERSION
 		}
 	}
 

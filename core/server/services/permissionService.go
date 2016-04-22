@@ -1,8 +1,9 @@
 package services
 
 import (
-	"github.com/go-ant/ant/core/server/models"
 	"github.com/rocwong/neko"
+
+	"github.com/go-ant/ant/core/server/models"
 )
 
 func PermissionList(ctx *neko.Context) {

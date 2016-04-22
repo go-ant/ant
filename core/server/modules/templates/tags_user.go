@@ -9,9 +9,11 @@ package templates
 
 import (
 	"bytes"
+
+	"gopkg.in/flosch/pongo2.v3"
+
 	"github.com/go-ant/ant/core/server/models"
 	"github.com/go-ant/ant/core/server/modules/utils"
-	"gopkg.in/flosch/pongo2.v3"
 )
 
 type tagUserNode struct {

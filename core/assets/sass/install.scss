@@ -1,9 +1,9 @@
 @import "variable";
 
-.ga-setup {
-  widows: 100%;
+.ga-install {
+  width: 100%;
   min-height: 100vh;
-  background: url(images/bg.png);
+  background: #333;
   background-size: cover;
   overflow: hidden;
 
@@ -96,7 +96,7 @@
 }
 
 @media screen and (max-height: 600px) {
-  .ga-setup {
+  .ga-install {
     .main {
       position: static;
       margin: 90px auto 30px;

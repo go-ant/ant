@@ -1,14 +1,61 @@
 package services
 
 import (
+	"bytes"
+	"encoding/base64"
+	"image/png"
+	"os"
+	"path"
+	"path/filepath"
+	"regexp"
+	"time"
+
+	"github.com/rocwong/neko"
+	"gopkg.in/ini.v1"
+
 	"github.com/go-ant/ant/core/server/data"
 	"github.com/go-ant/ant/core/server/models"
 	"github.com/go-ant/ant/core/server/modules/middleware"
+	"github.com/go-ant/ant/core/server/modules/setting"
 	"github.com/go-ant/ant/core/server/modules/utils"
-	"github.com/rocwong/neko"
+	"github.com/go-ant/ant/core/server/modules/utils/uuid"
 )
 
-func AppSetup(ctx *neko.Context) {
+// base64ImgUpload gets image from base64, return image path
+func base64ImgUpload(data string) (string, error) {
+
+	regBase64, _ := regexp.Compile("^data:[\\w]+/[\\w]+;base64,")
+	strBase64 := regBase64.ReplaceAllString(data, "")
+	byteBase64, _ := base64.StdEncoding.DecodeString(strBase64)
+
+	img, err := png.Decode(bytes.NewReader(byteBase64))
+	if err != nil {
+		return "", err
+	}
+
+	savePath := time.Now().Format("/2006/01/")
+	fileName := uuid.NewV4().String() + ".jpg"
+	fullPath := setting.API.UploadFolder + savePath
+
+	err = os.MkdirAll(fullPath, os.ModePerm)
+	if err != nil {
+		return "", err
+	}
+	out, err := os.Create(fullPath + fileName)
+
+	if err != nil {
+		return "", err
+	}
+	defer out.Close()
+
+	if err = png.Encode(out, img); err != nil {
+		return "", err
+	}
+
+	return path.Join(setting.Host.Path, setting.API.FilesPath, savePath, fileName), nil
+}
+
+func AppInstall(ctx *neko.Context) {
 	dataJson := ctx.Params.Json()
 	appTitle := dataJson.GetString("title")
 	user := models.User{
@@ -23,7 +70,7 @@ func AppSetup(ctx *neko.Context) {
 	}
 
 	if user.Avatar != "" {
-		avatarPath, err := utils.Base64ImgUpload(user.Avatar)
+		avatarPath, err := base64ImgUpload(user.Avatar)
 		if err != nil {
 			ctx.Json(models.RestApi{Error: models.UnknowError(err.Error())})
 			return
@@ -32,9 +79,15 @@ func AppSetup(ctx *neko.Context) {
 	}
 
 	var errApi models.ApiErr
-	if middleware.IsInstalled {
+	if setting.InstallLock {
 		errApi = models.ApiMsg.NoPermission
 	} else {
+		if !models.HasEngine {
+			if err := models.NewEngine(); err != nil {
+				ctx.Json(models.RestApi{Error: models.ApiMsg.DatabaseFailed})
+				return
+			}
+		}
 
 		// create tables
 		if errApi := models.InitialDatabase(); !errApi.IsSuccess() {
@@ -42,7 +95,7 @@ func AppSetup(ctx *neko.Context) {
 			return
 		}
 
-		// initial data
+		// initial base data
 		data.DoImport()
 
 		// create owner
@@ -69,6 +122,17 @@ func AppSetup(ctx *neko.Context) {
 
 		// import post data
 		data.ImportPosts(&user)
+
+		// save custom settings
+		if !utils.IsFile(setting.CustomConf) {
+			os.MkdirAll(filepath.Dir(setting.CustomConf), os.ModePerm)
+		}
+
+		cfg, _ := ini.Load(setting.CustomConf)
+		cfg.Section("security").Key("install_lock").SetValue("true")
+		cfg.SaveTo(setting.CustomConf)
+
+		data.GlobalInit()
 
 	}
 

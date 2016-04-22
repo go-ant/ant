@@ -7,8 +7,9 @@ package templates
 
 import (
 	"bytes"
-	"gopkg.in/flosch/pongo2.v3"
 	"strings"
+
+	"gopkg.in/flosch/pongo2.v3"
 )
 
 type tagBodyClassNode struct{}

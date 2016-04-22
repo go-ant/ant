@@ -1,13 +1,15 @@
 package controllers
 
 import (
+	"net/http"
+	"path/filepath"
+
+	"github.com/rocwong/neko"
+
 	"github.com/go-ant/ant/core/server/models"
 	"github.com/go-ant/ant/core/server/modules/middleware"
 	"github.com/go-ant/ant/core/server/modules/setting"
 	"github.com/go-ant/ant/core/server/modules/utils"
-	"github.com/rocwong/neko"
-	"net/http"
-	"path/filepath"
 )
 
 // themeView returns view path
@@ -46,10 +48,11 @@ func Post(ctx *neko.Context) {
 
 	post, errApi := models.GetPost(opts)
 
-	if post == nil || errApi.Code != 0 || post.Id == 0 || post.Status == models.PostStatusDraft || post.Page {
+	if post == nil || !errApi.IsSuccess() || post.Status == models.PostStatusDraft || post.Page {
 		ctx.Render(themeViews("404"), neko.JSON{
 			"tpl": "404",
 			"app": appSetting,
+			"meta":    map[string]string{"Title": "404 — Page not found"},
 		})
 		return
 	}
@@ -75,7 +78,7 @@ func Page(ctx *neko.Context) {
 
 	post, errApi := models.GetPost(opts)
 
-	if post == nil || errApi.Code != 0 || post.Id == 0 || post.Status == models.PostStatusDraft || !post.Page {
+	if post == nil || !errApi.IsSuccess() || post.Status == models.PostStatusDraft || !post.Page {
 		ctx.Render(themeViews("404"), neko.JSON{
 			"tpl": "404",
 			"app": appSetting,
@@ -114,11 +117,11 @@ func Admin(ctx *neko.Context) {
 }
 
 func Installer(ctx *neko.Context) {
-	if middleware.IsInstalled && ctx.Req.URL.Path == middleware.INSTALLER_URL {
+	if setting.InstallLock {
 		ctx.Redirect(setting.Host.Path)
 		return
 	}
-	ctx.Render("#backend/setup", nil)
+	ctx.Render("#backend/install", nil)
 }
 
 // AssetsHandler site theme assets handler

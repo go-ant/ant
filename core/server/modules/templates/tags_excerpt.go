@@ -11,10 +11,12 @@ package templates
 
 import (
 	"bytes"
+	"strings"
+
+	"gopkg.in/flosch/pongo2.v3"
+
 	"github.com/go-ant/ant/core/server/models"
 	"github.com/go-ant/ant/core/server/modules/utils"
-	"gopkg.in/flosch/pongo2.v3"
-	"strings"
 )
 
 type tagExcerptNode struct {

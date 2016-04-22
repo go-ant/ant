@@ -1,8 +1,9 @@
 package templates
 
 import (
-	"github.com/go-ant/ant/core/server/modules/startup"
 	"gopkg.in/flosch/pongo2.v3"
+
+	"github.com/go-ant/ant/core/server/modules/startup"
 )
 
 const (

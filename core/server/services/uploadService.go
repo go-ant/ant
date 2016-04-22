@@ -1,17 +1,19 @@
 package services
 
 import (
-	"github.com/go-ant/ant/core/server/models"
-	"github.com/go-ant/ant/core/server/modules/middleware"
-	"github.com/go-ant/ant/core/server/modules/setting"
-	"github.com/go-ant/ant/core/server/modules/utils"
-	"github.com/go-ant/ant/core/server/modules/utils/uuid"
-	"github.com/rocwong/neko"
 	"io"
 	"os"
 	"path"
 	"path/filepath"
 	"time"
+
+	"github.com/rocwong/neko"
+
+	"github.com/go-ant/ant/core/server/models"
+	"github.com/go-ant/ant/core/server/modules/middleware"
+	"github.com/go-ant/ant/core/server/modules/setting"
+	"github.com/go-ant/ant/core/server/modules/utils"
+	"github.com/go-ant/ant/core/server/modules/utils/uuid"
 )
 
 func Upload(ctx *neko.Context) {
