@@ -8,6 +8,14 @@ function appRouter ($stateProvider, $urlRouterProvider, $locationProvider, commS
   $urlRouterProvider.when('', '/posts');
   //$locationProvider.html5Mode(true);
   $stateProvider
+    .state('dashboard', {
+      url: '/',
+      templateUrl: commService.getTpls('index'),
+      resolve: {init: ['appService', function(appService) {return appService.promise;}]},
+      data: {
+        title: 'dashboard'
+      }
+    })
     // posts
     .state('posts', {
       url: '/posts',

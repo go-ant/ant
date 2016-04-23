@@ -182,7 +182,7 @@ func getMenus(loginUser *models.User) []models.Menu {
 		subMenus := make([]models.Menu, 0)
 		subMenus = append(subMenus, models.Menu{Name: "nav.post_list", Label: "post", URL: "posts"})
 
-		if loginUser.IsGranted("add-posts", nil) {
+		if loginUser.IsGranted("add-posts", nil) || loginUser.IsGranted("edit-all-posts", nil) {
 			subMenus = append(subMenus, models.Menu{Name: "nav.post_add", Label: "add post", URL: "posts/add"})
 		}
 
