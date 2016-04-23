@@ -2,5 +2,5 @@ node_modules
 .idea
 *.iml
 /content/upload
-/core/built
+/built
 /custom

@@ -45,7 +45,7 @@ var paths = {
     'core/client/main/views/**/*'
   ],
   templatesCache: [
-    'core/built/assets/js/templates.js'
+    'built/assets/js/templates.js'
   ],
   styles: [
     'core/assets/sass/**/*.scss'
@@ -62,7 +62,7 @@ var optsUglify = {
 
 gulp.task('copy', function() {
   return gulp.src('core/assets/css/**/**')
-    .pipe(gulp.dest('core/built/assets/css'))
+    .pipe(gulp.dest('built/assets/css'))
 });
 
 gulp.task('html-min', function() {
@@ -78,7 +78,7 @@ gulp.task('html-min', function() {
   };
   return gulp.src(paths.html)
     .pipe(htmlmin(options))
-    .pipe(gulp.dest('core/built/'));
+    .pipe(gulp.dest('built/'));
 });
 
 gulp.task('template-cache', function() {
@@ -86,13 +86,13 @@ gulp.task('template-cache', function() {
     .pipe(templateCache({
       module: 'app'
     }))
-    .pipe(gulp.dest('core/built/assets/js/'));
+    .pipe(gulp.dest('built/assets/js/'));
 });
 
 gulp.task('scripts-vendor', function() {
   return gulp.src(paths.vendor)
     .pipe(uglify('vendor.min.js', optsUglify))
-    .pipe(gulp.dest('core/built/assets/js'));
+    .pipe(gulp.dest('built/assets/js'));
 
 });
 
@@ -100,14 +100,14 @@ gulp.task('scripts-install', function() {
   gulp.src(paths.scriptsInstall)
     .pipe(babel())
     .pipe(uglify('install.min.js', optsUglify))
-    .pipe(gulp.dest('core/built/assets/js'));
+    .pipe(gulp.dest('built/assets/js'));
 });
 
 gulp.task('scripts-login', function() {
   gulp.src(paths.scriptsLogin)
     .pipe(babel())
     .pipe(uglify('login.min.js', optsUglify))
-    .pipe(gulp.dest('core/built/assets/js'));
+    .pipe(gulp.dest('built/assets/js'));
 });
 
 gulp.task('scripts-main', ['template-cache'], function() {
@@ -115,11 +115,11 @@ gulp.task('scripts-main', ['template-cache'], function() {
   return gulp.src(packageScripts)
     .pipe(babel())
     .pipe(uglify('goant.min.js', optsUglify))
-    .pipe(gulp.dest('core/built/assets/js'));
+    .pipe(gulp.dest('built/assets/js'));
 });
 
 gulp.task('scripts', ['scripts-main'], function() {
-  gulp.src('core/built/assets/js/templates.js')
+  gulp.src('built/assets/js/templates.js')
     .pipe(clean({force: true}));
 });
 
@@ -129,7 +129,7 @@ gulp.task('styles', function() {
     .pipe(minify({processImport: false}))
     .pipe(replace('themes/default/assets/', ''))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('core/built/assets/css/themes/'));
+    .pipe(gulp.dest('built/assets/css/themes/'));
 
 
   gulp.src('core/assets/sass/vendor.scss')
@@ -137,7 +137,7 @@ gulp.task('styles', function() {
     .pipe(minify({processImport: false}))
     .pipe(replace('themes/default/assets/', ''))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('core/built/assets/css/'));
+    .pipe(gulp.dest('built/assets/css/'));
 });
 
 
@@ -145,7 +145,7 @@ gulp.task('i18n', function () {
   return gulp.src(paths.i18n)
     .pipe(po2json())
     .pipe(n2a({reverse: false}))
-    .pipe(gulp.dest('core/built/assets/i18n/'));
+    .pipe(gulp.dest('built/assets/i18n/'));
 });
 
 

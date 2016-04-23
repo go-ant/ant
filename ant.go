@@ -26,7 +26,7 @@ func main() {
 		app.Use(gzip.Gzip(gzip.DefaultCompression))
 	}
 	// backend assets path
-	app.Static(path.Join(setting.Host.Path, "/goant/assets"), "core/built/assets")
+	app.Static(path.Join(setting.Host.Path, "/goant/assets"), "built/assets")
 	app.Static(path.Join(setting.Host.Path, setting.API.FilesPath), setting.API.UploadFolder)
 
 	app.Use(pongo2.Renderer(
@@ -34,7 +34,7 @@ func main() {
 			Extension: ".html",
 			BaseDir:   "content/themes",
 			MultiDir: map[string]string{
-				"backend": "core/built",
+				"backend": "built",
 			},
 		}),
 	)

@@ -17,9 +17,9 @@ import (
 )
 
 const (
-	permissions_json_path = "core/server/data/fixtures/permissions.json"
-	roles_json_path       = "core/server/data/fixtures/roles.json"
-	posts_json_path       = "core/server/data/fixtures/posts.json"
+	permissions_json_path = "content/data/fixtures/permissions.json"
+	roles_json_path       = "content/data/fixtures/roles.json"
+	posts_json_path       = "content/data/fixtures/posts.json"
 )
 
 // GlobalInit initialize global configuration
