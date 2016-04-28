@@ -26,11 +26,12 @@ main.content { width: 90%; max-width: 860px; margin: auto;}
 .post { position: relative; margin: 4rem auto; padding-bottom: 2rem; border-bottom: solid 1px #e7eef2; word-wrap: break-word;}
 .post:after { position: absolute; bottom: -5px; left: 50%; width: 7px; height: 7px; margin-left: -4px; border:#e7eef2 1px solid; border-radius: 100%; background: #fff; box-shadow: #fff 0 0 0 5px; content: '';}
 .post .post-title{ font-size: 3rem; font-weight: 700;}
-.post .post-meta{ margin: 1rem 0 1.5rem; color: #9eabb3; font-size: 1.4rem;}
-.post .post-content{ font-size: 2rem;}
+.post .post-meta{ margin: 1rem 0; color: #9eabb3; font-size: 1.4rem;}
+.post .post-content{ font-size: 1.6rem;}
+.post .post-content p { margin: 0 0 1.2rem; text-indent: 2em;}
 .post .post-content a { color: #999;}
 .post .post-content a:hover { text-decoration: underline;}
-.post .post-excerpt p{ margin: 0; color: #555; font-size: 1.6rem;}
+.post .post-excerpt p{ margin: 0; color: #555; text-indent: 2em; font-size: 1.6rem;}
 .post .post-excerpt a { font-weight: 400;}
 .post .post-excerpt a:hover { text-decoration: underline;}
 .post .post-excerpt .read-more { padding: .5rem 1rem 0 0; text-align: right;}
@@ -49,7 +50,7 @@ main.content { width: 90%; max-width: 860px; margin: auto;}
 
 .tpl-home:not(.paged) .main-header{ max-height: none;}
 
-.tpl-post .post .post-header { margin-bottom: 3rem;}
+.tpl-post .post .post-header { margin-bottom: 2rem;}
 
 @media screen and (max-width: 900px) {
   body { line-height: 1.6em;}
