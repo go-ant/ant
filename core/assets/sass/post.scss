@@ -41,7 +41,7 @@
       margin: 0;
       padding: 0;
       border: none;
-      font-size: 2rem;
+      font-size: 1.6rem;
       outline: none;
       resize: none;
     }
@@ -64,7 +64,7 @@
       position: relative;
       line-height: 1.5em;
       padding: 16px 16px 8px;
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
     .rendered-markdown {
       position: absolute;
@@ -74,8 +74,11 @@
       right: 8px;
       word-break: break-word;
       overflow: auto;
+      h1,h2,h3,h4,h5 {
+        margin: 1.2em 0 1em;
+      }
       p {
-        margin: 0 0 1.4em 0;
+        margin: 0 0 1.2rem 0;
       }
     }
   }
@@ -112,7 +115,7 @@
   }
 }
 
-@media (max-width: 959px) {
+@media screen and (max-width: 900px) {
   .editor {
     .entry-markdown {
       padding: 0;
